@@ -1,13 +1,14 @@
-"use client"
+"use client";
 import logoDynamos from "@/img/logo/logo-dynamo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 function LoginPage() {
-    const onclick = (e) => {
-        e.preventDefault();
-        console.log("click");
-    };
+  const onclick = (e) => {
+    e.preventDefault();
+    console.log("click");
+  };
 
   return (
     <div className="flex h-screen items-center justify-center">
@@ -49,6 +50,14 @@ function LoginPage() {
             Entrar
           </button>
         </form>
+        <div>
+          <button
+            onClick={() => signIn()}
+            className="text-white bg-blue-600 hover:bg-blue-400 w-full p-2 rounded-lg my-2"
+          >
+            Iniciar sesión con Google
+          </button>
+        </div>
         <p className="text-white mt-4 flex gap-x-2 justify-between select-none">
           ¿No tienes cuenta?{" "}
           <Link href="/register" className="text-sky-500 hover:text-zinc-500">

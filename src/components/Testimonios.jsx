@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import testimonioDynamo from "../data/testimoniosDynamo";
 import {
@@ -31,7 +31,9 @@ function Testimonios() {
   }, [contador]);
 
   return (
-    <div className={`w-full lg:pt-32 md:pt-32 sm:pt-24 bg-white dark:bg-gray-950`}>
+    <div
+      className={`w-full lg:pt-32 md:pt-32 sm:pt-24 bg-white dark:bg-gray-950`}
+    >
       <div>
         <h2 className="text-center md:text-5xl font-bold select-none sm:text-3xl sm:mb-5 text-black dark:text-white">
           Nuestros Testimonios
@@ -53,20 +55,18 @@ function Testimonios() {
                 className="md:w-60 rounded-3xl md:scale-125 md:mr-0 sm:w-36 sm:scale-100 sm:mr-3"
               />
             </div>
-            <div className="flex flex-col md:w-6/12 md:ml-20 sm:w-10/12 sm:text-justify">
-              <p
-                className={`md:text-2xl md:mb-5 sm:text-xs sm:mb-1 italic md:h-40 sm:h-24 font-serif`}
-              >
-                {testimonioDynamo[contador].testimonio}
-              </p>
-              <p
-                className={`md:mb-2 md:text-xl sm:text-xs sm:mb-1`}
-              >
+            <div className="flex flex-col md:w-7/12 md:ml-20 sm:w-10/12">
+              <div className="flex flex-col md:w-full sm:w-10/12 sm:text-justify overflow-auto">
+                <p
+                  className={`md:text-2xl md:mb-5 sm:text-xs sm:mb-1 italic md:h-40 sm:h-24 font-serif lg:text-base`}
+                >
+                  {testimonioDynamo[contador].testimonio}
+                </p>
+              </div>
+              <p className={`md:mb-2 md:text-xl sm:text-xs sm:mb-1 mt-2`}>
                 <strong>{testimonioDynamo[contador].nombre}</strong>
               </p>
-              <p
-                className={`md:text-xl sm:text-xs`}
-              >
+              <p className={`md:text-xl sm:text-xs`}>
                 {testimonioDynamo[contador].cargo}
               </p>
             </div>
