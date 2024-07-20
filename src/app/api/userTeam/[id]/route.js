@@ -1,4 +1,4 @@
-import UserTeam from "@/models/user.team";
+import UserTeam from "@/models/userTeam";
 import { connectMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
 

@@ -10,6 +10,8 @@ import Image from "next/image";
 function Testimonios() {
   const [contador, setContador] = useState(0);
 
+  console.log(testimonioDynamo);
+
   const onclickAdelante = () => {
     setContador(contador + 1);
   };
