@@ -30,22 +30,22 @@ const EnlacesIconTeam = ({ valores }) => {
           />
         </Link>
       )}
-      {valor.redes.tikTok && (
-        <Link href={valor.redes.tikTok} target="_blank">
+      {valor.redes.tiktok && (
+        <Link href={valor.redes.tiktok} target="_blank">
           <BsTiktok
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />
         </Link>
       )}
-      {valor.redes.youTube && (
-        <Link href={valor.redes.youTube} target="_blank">
+      {valor.redes.youtube && (
+        <Link href={valor.redes.youtube} target="_blank">
           <BsYoutube
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />
         </Link>
       )}
-      {valor.redes.linkedIn && (
-        <Link href={valor.redes.linkedIn} target="_blank">
+      {valor.redes.linkedin && (
+        <Link href={valor.redes.linkedin} target="_blank">
           <BsLinkedin
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />

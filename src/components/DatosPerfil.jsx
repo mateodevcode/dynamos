@@ -126,7 +126,7 @@ const DatosPerfil = ({ user }) => {
                 </RadioGroup>
                 <div className="mt-5 flex">
                   <div
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg mx-2 w-max"
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg mx-2 w-max cursor-pointer"
                     onClick={() => {
                       if (editar) {
                         location.reload();
