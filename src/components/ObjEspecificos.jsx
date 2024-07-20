@@ -13,10 +13,11 @@ function ObjEspecificos() {
               {objetivosEspecificos.titulo}
             </h1>
           </div>
+          {/* Hexagono 1 */}
           <div
             className={`hexagono1 md:w-[668px] sm:w-[360px] md:h-[528px] sm:h-[300px] justify-center items-center sm:z-30 bg-white dark:bg-gray-950`}
           >
-            <div className="hexagono4 flex flex-col md:w-[628px] sm:w-[326px] md:h-[496px] sm:h-[276px] justify-center items-center md:ml-5 sm:ml-4 sm:mt-3 ">
+            <div className="hexagono4 flex flex-col md:w-[652px] sm:w-[326px] md:h-[512px] sm:h-[276px] justify-center items-center md:ml-2 sm:ml-4 md:mt-2 sm:mt-3 ">
               <p className="text-white md:text-2xl md:flex sm:hidden sm:text-sm md:font-normal sm:font-bold md:ml-4 md:w-96 sm:w-64 sm:ml-9 sm:mt-20 z-30">
                 {objetivosEspecificos.contenido2}
               </p>
@@ -31,10 +32,11 @@ function ObjEspecificos() {
         </div>
         {/* recuadro2 */}
         <div className="flex md:flex-col sm:flex-col justify-center items-center md:w-[670px] sm:w-[360px] md:-mt-16 sm:-mt-32">
+          {/* Hexagono2 */}
           <div
             className={`hexagono3 md:w-[668px] sm:w-[360px] md:h-[528px] sm:h-[300px] justify-center items-center md:mb-12 dark:bg-gray-950 bg-white`}
           >
-            <div className=" flex flex-col hexagono6  md:w-[628px] sm:w-[326px] md:h-[496px] sm:h-[276px] justify-center items-center md:ml-5 sm:ml-4 sm:mt-3">
+            <div className=" flex flex-col hexagono6  md:w-[652px] sm:w-[326px] md:h-[512px] sm:h-[276px] justify-center items-center md:ml-2 sm:ml-4 md:mt-2 sm:mt-3">
               <p className="text-white md:text-2xl sm:flex md:hidden sm:text-sm sm:font-bold md:ml-4 md:w-96 sm:w-64 sm:ml-5sm:-mt-4 z-30">
                 {objetivosEspecificos.contenido2}
               </p>
