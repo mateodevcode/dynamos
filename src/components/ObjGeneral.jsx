@@ -15,10 +15,11 @@ function ObjGeneral() {
           <div className="md:w-[820px] sm:w-[350px] md:h-72 sm:h-12  md:text-8xl sm:text-3xl md:mb-1 sm:mb-20 font-bold md:ml-20 sm:ml-2 sm:text-center md:mt-24 sm:mt-6">
             <h1 className="md:mt-10 sm:mt-8 text-white">OBJETIVOS</h1>
           </div>
-          <div
+          {/* Hexagono 1 */}
+          <div 
             className={`hexagono1 md:w-[668px] sm:w-[360px] md:h-[528px] sm:h-[300px] justify-center items-center bg-white dark:bg-gray-950`}
           >
-            <div className="hexagono2 md:w-[628px] sm:w-[326px] md:h-[490px] sm:h-[276px] justify-between items-center md:ml-5 sm:ml-4 md:mt-4 sm:mt-3"></div>
+            <div className="hexagono2 md:w-[652px] sm:w-[326px] md:h-[512px] sm:h-[276px] justify-between items-center md:ml-2 sm:ml-4 md:mt-2 sm:mt-3"></div>
           </div>
           <div className="  md:-mt-[470px] sm:-mt-72 w-[360px] h-auto z-30 py-5">
             <h1 className="text-white text-center md:text-4xl sm:text-xl font-bold md:mb-16 sm:mb-4 uppercase italic sombraText">
@@ -32,12 +33,13 @@ function ObjGeneral() {
         {/* recuadro2 */}
         <div className="flex flex-col justify-around items-center md:w-[670px] sm:w-[360px]">
           <div
-            className={`trapecio md:flex sm:hidden sm:-mr-0 md:-mr-[80px] md:w-[556px] sm:w-[250px] md:h-[100px] sm:h-28 md:-mt-7 sm:-mt- md:ml-9 sm:ml-28 md:mb-7 bg-white dark:bg-gray-950`}
+            className={`trapecio md:flex sm:hidden sm:-mr-0 md:-mr-[80px] md:w-[556px] sm:w-[250px] md:h-[100px] sm:h-28 md:-mt-7 sm:-mt- md:ml-9 sm:ml-28 md:mb-12 bg-white dark:bg-gray-950`}
           ></div>
+          {/* Hexagono2 */}
           <div
-            className={`hexagono3  md:w-[668px] sm:w-[360px] md:h-[528px] sm:h-[300px] justify-center items-center md:mb-52 sm:mb-24 bg-white dark:bg-gray-950`}
+            className={`hexagono3  md:w-[668px] sm:w-[360px] md:h-[528px] sm:h-[300px] justify-center items-center md:mb-60 sm:mb-24 bg-white dark:bg-gray-950`}
           >
-            <div className="hexagono4 md:w-[628px] sm:w-[326px] md:h-[490px] sm:h-[276px] justify-between items-center md:ml-5 sm:ml-4 md:mt-4 sm:mt-3"></div>
+            <div className="hexagono4 md:w-[652px] sm:w-[326px] md:h-[512px] sm:h-[276px] justify-between items-center md:ml-2 sm:ml-4 md:mt-2 sm:mt-3"></div>
           </div>
           <div
            className={`md:justify-center md:items-center text-transparent trapecio2 md:-mr-[80px] md:w-[556px] sm:w-[200px] sm:h-24 md:ml-9 sm:ml-40
