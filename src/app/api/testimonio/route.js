@@ -12,7 +12,7 @@ export async function POST(req) {
   try {
     const data = await req.json();
     await connectMongoDB();
-    await UserTeam.create(data);
+    await Testimonio.create(data);
     return NextResponse.json({ message: "Se ha creado el testimonio correctamente." }, { status: 201 });
   } catch (error) {
     return NextResponse.json(
