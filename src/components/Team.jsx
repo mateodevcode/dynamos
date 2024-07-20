@@ -3,7 +3,6 @@ import EnlacesIconTeam from "./EnlacesIconTeam";
 import Image from "next/image";
 
 function Team() {
-
   return (
     <div
       className={`w-full flex flex-col justify-center items-center lg:pt-32 md:pt-32 sm:pt-24 bg-white dark:bg-gray-950`}
@@ -35,7 +34,6 @@ function Team() {
 }
 
 const CardTeam = () => {
-
   return teamDynamo.map((valor, i) => {
     return (
       <div

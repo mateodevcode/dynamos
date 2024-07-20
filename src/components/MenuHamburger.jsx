@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Drawer,
   DrawerBody,
@@ -11,7 +11,6 @@ import React from "react";
 import { BsList } from "react-icons/bs";
 import { enlacesNavbar } from "../data/enlaces.navbar";
 import EnlaceNavbar from "./EnlaceNavbar";
-import { useAuth } from "../context/AuthContext";
 import logoDynamo from "../img/logo/logo-dynamo.png";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,9 +18,6 @@ import Image from "next/image";
 function MenuHamburger() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  // const { darkMode } = useAuth();
-  const darkMode = false;
-
 
   return (
     <>
@@ -33,16 +29,13 @@ function MenuHamburger() {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent bg={darkMode ? "#111827" : "white"}>
-          <DrawerCloseButton
-            bg={darkMode ? "white" : "black"}
-            color={darkMode ? "#111827" : "white"}
-          />
+        <DrawerContent>
+          <DrawerCloseButton className="bg-white text-black dark:bg-black dark:text-white" />
 
-          <DrawerBody>
+          <DrawerBody className="bg-white dark:bg-gray-950 text-black dark:text-white">
             <div className="flex flex-col justify-between items-start">
               <div
-                className={`w-full flex flex-col justify-center items-start dark:bg-gray-900 dark:text-gray-300 mt-16 mb-40`}
+                className={`w-full flex flex-col justify-center items-start mt-16 mb-40`}
               >
                 {enlacesNavbar.map((enlace, index) => {
                   return (

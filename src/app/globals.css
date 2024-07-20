@@ -58,8 +58,7 @@ body {
 .hexagono2 {
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background-image: url(../img/somosdynamos/objgeneral1.png);
-  filter:brightness(0.4)
-  
+  filter: brightness(0.4)
 }
 
 .hexagono1 {
@@ -69,7 +68,7 @@ body {
 .hexagono4 {
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   background-image: url(../img/somosdynamos/objgeneral1.png);
-  
+
 }
 
 .hexagono3 {
@@ -91,13 +90,42 @@ body {
 }
 
 .trapecio2 {
-clip-path: polygon(8% 0, 100% 0, 100% 39%, 0 40%);
+  clip-path: polygon(8% 0, 100% 0, 100% 39%, 0 40%);
 }
 
-.sombraText{
-  text-shadow:2PX 2PX 12PX darkgoldenrod   ;
+.sombraText {
+  text-shadow: 2PX 2PX 12PX darkgoldenrod;
 }
 
 
-  
 
+
+/* Barra de navegación Testimonio */
+
+.prueba::-webkit-scrollbar {
+  width: 12px;
+  /* width of the entire scrollbar */
+}
+
+.prueba::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  /* color of the tracking area */
+}
+
+.prueba::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #2a2a2a;
+  /* creates padding around scroll thumb */
+}
+
+.prueba {
+  scrollbar-width: thin;
+  /* "auto" or "thin" */
+  scrollbar-color: #fff #2a2a2a;
+  /* scroll thumb and track */
+}
+
+/* Barra de navegación Testimonio */

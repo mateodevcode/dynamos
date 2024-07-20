@@ -1,8 +1,7 @@
 import Mision from "./Mision";
 import ObjGeneral from "./ObjGeneral";
-import ObjEspecificos from "./ObjEspecificos"
+import ObjEspecificos from "./ObjEspecificos";
 import Vision from "./Vision";
-
 
 function SomosDynamosNew() {
   return (

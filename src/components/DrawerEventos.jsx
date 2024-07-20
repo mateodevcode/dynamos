@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   Button,
   Drawer,
@@ -21,7 +21,9 @@ function DrawerEventos({ imagenes: imagen, datosEvento }) {
         onClick={onOpen}
         className="text-black text-5xl justify-end cursor-pointer hover:text-white hover:bg-blue-500 dark:hover:bg-red-500"
         _hover={{ bg: "blue.500" }}
-      >Ver mas</Button>
+      >
+        Ver mas
+      </Button>
 
       <Drawer
         isOpen={isOpen}
@@ -45,6 +47,5 @@ function DrawerEventos({ imagenes: imagen, datosEvento }) {
     </>
   );
 }
-
 
 export default DrawerEventos;

@@ -1,12 +1,10 @@
 "use client";
-
 import testimonioDynamo from "../data/testimoniosDynamo";
 import {
   BsFillArrowLeftSquareFill,
   BsFillArrowRightSquareFill,
 } from "react-icons/bs";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 function Testimonios() {
@@ -56,7 +54,7 @@ function Testimonios() {
               />
             </div>
             <div className="flex flex-col md:w-7/12 md:ml-20 sm:w-10/12">
-              <div className="flex flex-col md:w-full sm:w-10/12 sm:text-justify overflow-auto">
+              <div className="flex flex-col md:w-full sm:w-10/12 sm:text-justify overflow-auto prueba">
                 <p
                   className={`md:text-2xl md:mb-5 sm:text-xs sm:mb-1 italic md:h-40 sm:h-24 font-serif lg:text-base`}
                 >

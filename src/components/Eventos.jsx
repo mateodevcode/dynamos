@@ -1,7 +1,6 @@
 import CardEvento from "./CardEvento.jsx";
 
 function Eventos() {
-
   return (
     <div
       className={`w-full flex flex-col justify-center items-center lg:pt-24 md:pt-24 sm:pt-12 bg-white dark:bg-gray-950`}
@@ -25,6 +24,5 @@ function Eventos() {
     </div>
   );
 }
-
 
 export default Eventos;

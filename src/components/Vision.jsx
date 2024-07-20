@@ -4,7 +4,6 @@ import { vision } from "../data/misionVisionObjetivos";
 import Image from "next/image";
 
 function Vision() {
-
   return (
     // principal
     <div className="w-full h-full flex flex-col justify-center bg-imagen-aboutus lg:pt-6 lg:pb-60 sm:pt-20 pb-44">
@@ -43,9 +42,7 @@ function Vision() {
           <p className="lg:text-lg md:text-lg italic font-semibold sm:text-[10px]">
             @Dynamos_movimiento
           </p>
-          <p className="text-xl italic font-semibold">
-            ...........
-          </p>
+          <p className="text-xl italic font-semibold">...........</p>
         </div>
       </div>
     </div>

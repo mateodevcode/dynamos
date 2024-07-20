@@ -2,6 +2,8 @@ import Image from "next/image";
 import EnlacesIconEvento from "./EnlacesIconEvento";
 
 const Evento = ({ imagenes, datosEvento }) => {
+  // const datoEvent = datosEvento[0];
+  // console.log(datoEvent);
   return imagenes.map((img, i) => {
     return (
       <div key={i} className="flex flex-col justify-center items-center">
@@ -29,7 +31,7 @@ const Evento = ({ imagenes, datosEvento }) => {
             );
           })}
         </div>
-        {/* <EnlacesIconEvento valores={datosEvento[0]} /> */}
+        {/* <EnlacesIconEvento valores={datoEvent} /> */}
         <div className="lg:my-10 md:my-10 sm:my-5 lg:text-lg md:text-lg sm:text-sm dark:text-white flex flex-row justify-center items-center font-semibold">
           Publicado por: {datosEvento[0].autor} el
           <Image

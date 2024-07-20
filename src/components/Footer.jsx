@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import logoDynamo from "../img/logo/logo-dynamo.png";
 import { enlacesFooter } from "../data/enlaces.footer";
 import EnlacesIconsFooter from "./EnlacesIconsFooter";
@@ -8,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 function Footer() {
-
   return (
     <div
       className={`flex flex-col justify-center items-center pt-20 pb-10 bg-white dark:bg-gray-950 text-black dark:text-white`}

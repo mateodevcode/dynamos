@@ -1,16 +1,23 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import "./globals.css";
+import { AuthProvider } from "./Providers";
 
 export const metadata = {
   title: "Dynamos Movimientos",
-  description: "iglesia,iglesia de camelot,iglesia de soledad",
+  description:
+    "Bienvenido a la Iglesia Dynamos, una comunidad cristiana vibrante en el Atlántico, Colombia. Únase a nosotros para adorar, aprender y crecer en la fe.",
+  keywords:
+    "Iglesia, Iglesia Cristiana, Atlántico, Colombia, Comunidad Cristiana, Servicios Religiosos, Fe, Adoración, Eventos Cristianos",
+  ogTitle: "Iglesia Dynamos - Comunidad Cristiana en el Atlántico, Colombia",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className="light">
-        <ChakraProvider>{children}</ChakraProvider>
+      <body className="dark">
+        <AuthProvider>
+          <ChakraProvider>{children}</ChakraProvider>
+        </AuthProvider>
       </body>
     </html>
   );

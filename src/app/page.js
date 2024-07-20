@@ -6,7 +6,10 @@ import SomosDynamosNew from "@/components/SomosDynamosNew";
 import Team from "@/components/Team";
 import Testimonios from "@/components/Testimonios";
 
+
 export default function Home() {
+  
+  
   return (
     <>
       <BarraDeNavegacion />

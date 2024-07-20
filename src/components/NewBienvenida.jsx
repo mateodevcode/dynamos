@@ -4,7 +4,6 @@ import logoDynamos from "../img/logo/logo-dynamo.png";
 import Image from "next/image";
 
 const NewBienvenida = () => {
-
   return (
     <div
       className={`w-full flex flex-col justify-start items-center dark:bg-gray-950 lg:h-[750px] md:h-screen sm:h-72 md:mt-0 sm:mt-12 sm:pb-20`}
@@ -28,7 +27,9 @@ const NewBienvenida = () => {
           className="lg:text-3xl md:text-3xl sm:text-sm lg:mt-36 md:mt-24
        sm:mt-12 text-right lg:pl-[500px] md:pl-[500px] sm:pl-[80px] lg:pr-40 md:pr-40 sm:pr-10 dark:text-white"
         >
-          Aquí podrán ver lo que hacemos como movimiento al servicio de Dios y del prójimo, y también cómo pueden unirse a nosotros en este camino de fe.
+          Aquí podrán ver lo que hacemos como movimiento al servicio de Dios y
+          del prójimo, y también cómo pueden unirse a nosotros en este camino de
+          fe.
         </p>
       </div>
     </div>

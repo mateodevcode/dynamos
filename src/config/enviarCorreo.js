@@ -10,3 +10,5 @@ export const enviarCorreo = (event) => {
   )}&body=${encodeURIComponent(cuerpoCorreo)}`;
   window.location.href = mailtoURL;
 };
+
+

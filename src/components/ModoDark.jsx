@@ -1,9 +1,10 @@
-"use client"
+"use client";
 import { useState } from "react";
 import { BsMoonFill, BsSun } from "react-icons/bs";
 
 const ModoDark = () => {
   const [dark, setDark] = useState("dark");
+
   const toggleDark = () => {
     if (dark === "dark") {
       setDark("light");
@@ -16,12 +17,9 @@ const ModoDark = () => {
     }
   };
 
-
-  const darkMode = false;
-
   return (
     <div
-      className="flex flex-row justify-center items-center"
+      className="flex flex-row justify-center items-center lg:mr-10 md:mr-10 sm:mr-0 sm:ml-5"
       onClick={toggleDark}
     >
       {dark == "dark" ? (
