@@ -1,3 +1,4 @@
+import AddUserTeam from "./AddUserTeam";
 import CardTeam from "./CardTeam";
 
 async function Team() {
@@ -27,6 +28,7 @@ async function Team() {
           <CardTeam />
         </div>
       </div>
+      <AddUserTeam />
     </div>
   );
 }
