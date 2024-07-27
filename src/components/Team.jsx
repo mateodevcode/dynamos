@@ -1,7 +1,18 @@
+import UserTeam from "@/models/userTeam";
 import AddUserTeam from "./AddUserTeam";
 import CardTeam from "./CardTeam";
+import { connectMongoDB } from "@/lib/mongodb";
+
+const cargarUserTeam = async () => {
+  connectMongoDB();
+  const UsersTeam = await UserTeam.find();
+  return UsersTeam;
+};
 
 async function Team() {
+  const admin = false;
+  const teamDynamo = await cargarUserTeam();
+
   return (
     <div
       className={`w-full flex flex-col justify-center items-center lg:pt-32 md:pt-32 sm:pt-24 bg-white dark:bg-gray-950`}
@@ -25,10 +36,10 @@ async function Team() {
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center md:mb-20 sm:mb-10">
-          <CardTeam />
+          <CardTeam teamDynamo={teamDynamo} />
         </div>
       </div>
-      <AddUserTeam />
+      {admin && <AddUserTeam />}
     </div>
   );
 }

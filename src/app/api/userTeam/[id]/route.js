@@ -37,13 +37,14 @@ export async function PUT(request, { params }) {
   }
 }
 
+
 export async function DELETE(request, { params }) {
   try {
-    const UsuarioEliminado = await User.findByIdAndDelete(params.id);
-    if (!ProductoEliminado)
+    const UsuarioEliminado = await UserTeam.findOneAndDelete({"_id":params.id});
+    if (!UsuarioEliminado)
       return NextResponse.json(
         {
-          message: "Producto no encontrado",
+          message: "Usuario no encontrado",
         },
         {
           status: 404,
