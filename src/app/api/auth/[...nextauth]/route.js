@@ -65,7 +65,7 @@ export const authOptions = {
               },
               body: JSON.stringify({
                 name,
-                email,
+                email
               }),
             });
 
