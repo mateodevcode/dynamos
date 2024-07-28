@@ -12,7 +12,7 @@ function Team() {
 
   useEffect(() => {
     if (
-      session?.user?.email === "mateo@gmail.com"
+      session?.user?.email === "bysteffler@gmail.com"
     ) {
       setAdmin(true);
     } else {

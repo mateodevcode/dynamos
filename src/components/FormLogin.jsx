@@ -12,6 +12,7 @@ import {
   AlertIcon,
   AlertTitle,
 } from "@chakra-ui/react";
+import { FcGoogle } from "react-icons/fc";
 
 function FormLogin() {
   const [email, setEmail] = useState("");
@@ -44,8 +45,8 @@ function FormLogin() {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-950 text-black">
-      <div className=" max-w-md md:w-full p-10 rounded-xl">
+    <div className="flex h-screen items-center justify-center dark: dark:bg-gray-950 text-black">
+      <div className=" max-w-md md:w-full p-10 rounded-xl bg-blue-600/20 rounded-xl py-20">
         <div className="w-full flex justify-center items-center md:mb-5 sm:mb-3">
           <Link href="/">
             <Image
@@ -55,11 +56,11 @@ function FormLogin() {
             />
           </Link>
         </div>
-        <h1 className="text-2xl text-white mb-10 text-center">
+        {/* <h1 className="text-2xl text-white mb-10 text-center">
           Inicia sesión en <strong>Dynamos</strong>
-        </h1>
+        </h1> */}
         <form onSubmit={handleSubmit}>
-          <input
+          {/* <input
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             name="email"
@@ -81,7 +82,22 @@ function FormLogin() {
             className="text-white bg-indigo-600 hover:bg-indigo-400 w-full p-2 rounded-lg my-2"
           >
             Entrar
+          </button> */}
+          <button 
+          onClick={() => signIn("google")}
+          type="button"
+          className="bg-gray-100 hover:bg-gray-300 text-black w-full p-2 rounded-lg my-2 flex justify-start items-center font-semibold">
+            <FcGoogle
+            height={20}
+            className="ml-4 lg:mr-14 md:mr-14 sm:mr-8 text-xl" />Inicia sesión con Google
           </button>
+          {/* <button 
+          onClick={() => signIn("google")}
+          type="button"
+          className="bg-blue-500 hover:bg-blue-300 text-white w-full p-2 rounded-lg my-2 flex justify-start items-center font-semibold">
+            <BsFacebook
+            className="ml-4 lg:mr-14 md:mr-14 sm:mr-8 text-white text-xl" />Inicia sesión con Facebook
+          </button> */}
         </form>
         {error && (
           <Alert status="error">
@@ -90,7 +106,7 @@ function FormLogin() {
             <AlertDescription>{error}</AlertDescription>
           </Alert>
         )}
-        <p className="text-white mt-4 flex gap-x-2 justify-between select-none">
+        <p className=" mt-4 flex gap-x-2 justify-between select-none dark:text-white">
           ¿No tienes cuenta?{" "}
           <Link href="/register" className="text-sky-500 hover:text-zinc-500">
             Registrate

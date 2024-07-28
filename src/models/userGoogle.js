@@ -11,24 +11,25 @@ const userGoogleSchema = new Schema(
       required: true,
     },
     password: {
-        type: String,
-        required: false,
-      },
-      image: {
-        type: String,
-        default: "",
-      },
-      ocupacion: {
-        type: String,
-        default: "",
-      },
-      role: {
-        type: String,
-        default: "user",
-      },
+      type: String,
+      default: "",
+    },
+    image: {
+      type: String,
+      default: "",
+    },
+    ocupacion: {
+      type: String,
+      default: "",
+    },
+    role: {
+      type: String,
+      default: "user",
+    },
   },
   { timestamps: true }
 );
 
-const UserGoogle = models.UserGoogle || mongoose.model("UserGoogle", userGoogleSchema);
+const UserGoogle =
+  models.UserGoogle || mongoose.model("UserGoogle", userGoogleSchema);
 export default UserGoogle;

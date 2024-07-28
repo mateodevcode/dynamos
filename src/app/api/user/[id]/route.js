@@ -1,11 +1,12 @@
 import User from "@/models/user";
 import { connectMongoDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
+import UserGoogle from "@/models/userGoogle";
 
 export async function GET(request, { params }) {
   try {
     connectMongoDB();
-    const UserEncontrado = await User.findOne({"email": params.id});
+    const UserEncontrado = await UserGoogle.findOne({"email": params.id}) || User.findOne({"email": params.id});
     if (!UserEncontrado)
       return NextResponse.json(
         {

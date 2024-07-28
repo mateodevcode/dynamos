@@ -10,8 +10,10 @@ import {
   AlertIcon,
   AlertTitle,
 } from "@chakra-ui/react";
-import { BsGoogle } from "react-icons/bs";
+import { BsFacebook, BsGoogle } from "react-icons/bs";
 import { signIn } from "next-auth/react";
+import logoGoogle from "@/img/logo/chrome.png";
+import { FcGoogle } from "react-icons/fc";
 
 function FormRegister() {
   const [name, setName] = useState("");
@@ -68,8 +70,8 @@ function FormRegister() {
   };
 
   return (
-    <div className="flex justify-center h-screen items-center md:p-10 rounded-md">
-      <div className="max-w-md w-full p-10">
+    <div className="flex justify-center h-screen items-center md:p-10 rounded-md dark:bg-gray-950 dark:text-white">
+      <div className="max-w-md w-full p-10 bg-blue-600/20 rounded-xl py-20">
         <div className="w-full flex justify-center items-center">
           <Link href="/">
             <Image
@@ -79,11 +81,11 @@ function FormRegister() {
             />
           </Link>
         </div>
-        <h1 className="text-2xl font-bold text-black mb-10 text-center">
+        <h1 className="lg:text-2xl md:text-2xl sm:text-xl font-bold mb-10 text-center">
           Crea tu cuenta en <strong>Dynamos</strong>
         </h1>
         <form onSubmit={handleSubmit}>
-          <p className="font-bold">Nombre</p>
+          {/* <p className="font-bold">Nombre</p>
           <input
             onChange={(e) => setName(e.target.value)}
             type="text"
@@ -111,13 +113,25 @@ function FormRegister() {
             className="text-white bg-indigo-600 hover:bg-indigo-400 w-full p-2 rounded-lg my-2"
           >
             Registrate
+          </button> */}
+          <button
+            onClick={() => signIn("google")}
+            type="button"
+            className="bg-gray-100 hover:bg-gray-300 text-black w-full p-2 rounded-lg my-2 flex justify-start items-center font-semibold"
+          >
+            <FcGoogle
+              height={20}
+              className="ml-4 lg:mr-14 md:mr-14 sm:mr-8 text-xl"
+            />
+            Registrate con Google
           </button>
-          <button 
+          {/* <button 
           onClick={() => signIn("google")}
           type="button"
-          className="text-white bg-red-600 hover:bg-red-400 w-full p-2 rounded-lg my-2 flex justify-center items-center">
-            Registrate con Google <BsGoogle className="mx-4" />
-          </button>
+          className="bg-blue-500 hover:bg-blue-300 text-white w-full p-2 rounded-lg my-2 flex justify-start items-center font-semibold">
+            <BsFacebook
+            className="ml-4 lg:mr-14 md:mr-14 sm:mr-8 text-white text-xl" />Inicia sesión con Facebook
+          </button> */}
         </form>
         {error && (
           <Alert status="error">
@@ -126,7 +140,7 @@ function FormRegister() {
             <AlertDescription>{error}</AlertDescription>
           </Alert>
         )}
-        <p className="text-black mt-2 p-3 flex gap-x-2 justify-between bg-gray-100 select-none md:text-base sm:text-sm">
+        <p className="text-black mt-3 p-3 flex gap-x-2 justify-between bg-gray-100 select-none md:text-base sm:text-sm">
           ¿Ya tienes una cuenta?
           <Link href="/login" className="text-indigo-600 hover:text-zinc-500">
             Iniciar sesión
