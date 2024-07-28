@@ -25,7 +25,7 @@ function ObjGeneral() {
             <h1 className="text-white text-center md:text-4xl sm:text-xl font-bold md:mb-16 sm:mb-4 uppercase italic sombraText">
               {objetivoGeneral.titulo}
             </h1>
-            <p className="text-white md:text-2xl sm:text-sm sm:font-bold md:ml-4  md:w-96 sm:w-60 sm:ml-20 sm:mt-2">
+            <p className="text-white md:text-2xl sm:text-sm md:ml-4 md:w-96 sm:w-60 sm:ml-20 sm:mt-2">
               {objetivoGeneral.contenido}
             </p>
           </div>

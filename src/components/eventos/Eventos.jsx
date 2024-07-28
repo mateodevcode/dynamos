@@ -5,7 +5,7 @@ function Eventos() {
     <div
       className={`w-full flex flex-col justify-center items-center lg:pt-24 md:pt-24 sm:pt-12 bg-white dark:bg-gray-950`}
     >
-      <div className="flex flex-col justify-center items-center w-10/12">
+      <div className="flex flex-col justify-center items-center lg:w-10/12 md:w-full">
         <div className="lg:w-11/12 md:w-full sm:w-11/12 dark:text-white text-black">
           <h2 className="lg:text-5xl md:text-5xl font-bold md:mb-10 sm:text-3xl sm:mt-10 sm:mb-5 sm:text-center">
             Eventos Dynamos
