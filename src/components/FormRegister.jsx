@@ -10,6 +10,8 @@ import {
   AlertIcon,
   AlertTitle,
 } from "@chakra-ui/react";
+import { BsGoogle } from "react-icons/bs";
+import { signIn } from "next-auth/react";
 
 function FormRegister() {
   const [name, setName] = useState("");
@@ -109,6 +111,12 @@ function FormRegister() {
             className="text-white bg-indigo-600 hover:bg-indigo-400 w-full p-2 rounded-lg my-2"
           >
             Registrate
+          </button>
+          <button 
+          onClick={() => signIn("google")}
+          type="button"
+          className="text-white bg-red-600 hover:bg-red-400 w-full p-2 rounded-lg my-2 flex justify-center items-center">
+            Registrate con Google <BsGoogle className="mx-4" />
           </button>
         </form>
         {error && (

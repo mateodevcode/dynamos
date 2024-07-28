@@ -15,9 +15,9 @@ async function BarraDeNavegacion() {
   console.log("session", session);
 
   return (
-    <div className="flex flex-col justify-start items-start z-50">
+    <div className="flex flex-col justify-start items-start z-50 ">
       <div
-        className={`w-full h-12 flex flex-row items-center lg:justify-between md:justify-around sm:justify-between dark:text-white border-gray-200 dark:border-gray-500 border-b-2 z-10 fixed bg-white/50 dark:bg-gray-900/50`}
+        className={`w-full h-12 flex flex-row items-center lg:justify-between md:justify-around sm:justify-between dark:text-white border-gray-200 dark:border-gray-500 border-b-2 z-10 fixed bg-white/50 dark:bg-gray-900/50 shadow-md shadow-black/80 dark:shadow-white/50`}
       >
         {/* Imagen principal */}
         <Link href={"/"}>
