@@ -1,7 +1,7 @@
-import mision1 from "../img/somosdynamos/mision1.jpeg";
-import mision2 from "../img/somosdynamos/mision2.jpeg";
-import mision3 from "../img/somosdynamos/mision3.jpeg";
-import { mision } from "../data/misionVisionObjetivos";
+import mision1 from "@/img/somosdynamos/mision1.jpeg";
+import mision2 from "@/img/somosdynamos/mision2.jpeg";
+import mision3 from "@/img/somosdynamos/mision3.jpeg";
+import { mision } from "@/data/misionVisionObjetivos";
 import Image from "next/image";
 
 function Mision() {

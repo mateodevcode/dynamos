@@ -1,4 +1,4 @@
-import CardTestimonio from "./CardTestimonio";
+import CardTestimonio from "@/components/testimonios/CardTestimonio";
 import { connectMongoDB } from "@/lib/mongodb";
 import Testimonio from "@/models/testimonio";
 

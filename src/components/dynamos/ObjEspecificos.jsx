@@ -1,4 +1,4 @@
-import { objetivosEspecificos } from "../data/misionVisionObjetivos";
+import { objetivosEspecificos } from "@/data/misionVisionObjetivos";
 
 function ObjEspecificos() {
   return (

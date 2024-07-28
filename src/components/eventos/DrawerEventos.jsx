@@ -9,7 +9,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import Evento from "./Evento";
+import Evento from "@/components/eventos/Evento";
 
 function DrawerEventos({ imagenes: imagen, datosEvento }) {
   const { isOpen, onOpen, onClose } = useDisclosure();

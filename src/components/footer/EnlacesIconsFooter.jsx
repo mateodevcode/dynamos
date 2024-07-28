@@ -7,7 +7,7 @@ import {
   BsWhatsapp,
   BsYoutube,
 } from "react-icons/bs";
-import { enviarCorreo } from "../config/enviarCorreo";
+import { enviarCorreo } from "@/config/enviarCorreo";
 import Link from "next/link";
 
 const EnlacesIconsFooter = ({ enlace }) => {

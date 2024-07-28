@@ -1,6 +1,6 @@
-import imgBienvenida from "../img/bienvenida/img-bienvenida.jpg";
-import imgBienvenidaSm from "../img/bienvenida/img-bienvenida-sm.jpg";
-import logoDynamos from "../img/logo/logo-dynamo.png";
+import imgBienvenida from "@/img/bienvenida/img-bienvenida.jpg";
+import imgBienvenidaSm from "@/img/bienvenida/img-bienvenida-sm.jpg";
+import logoDynamos from "@/img/logo/logo-dynamo.png";
 import Image from "next/image";
 
 const NewBienvenida = () => {

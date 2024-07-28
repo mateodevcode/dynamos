@@ -1,8 +1,8 @@
 "use client"
 
 import Image from "next/image";
-import { eventos } from "../data/eventoDynamo";
-import DrawerEventos from "./DrawerEventos";
+import { eventos } from "@/data/eventoDynamo";
+import DrawerEventos from "@/components/eventos/DrawerEventos";
 import { useState } from "react";
 
 const CardEvento = () => {

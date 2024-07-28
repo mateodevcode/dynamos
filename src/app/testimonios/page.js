@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer"
-import BarraDeNavegacion from "@/components/Navbar"
-import Testimonios from "@/components/Testimonios"
+import Footer from "@/components/footer/Footer"
+import BarraDeNavegacion from "@/components/navbar/Navbar"
+import Testimonios from "@/components/testimonios/Testimonios"
 
 function TestimoniosPage() {
 

@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '@/components/Navbar'
+import Navbar from '@/components/navbar/Navbar'
 import ClientDatosPerfil from '@/components/ClientDatosPerfil'
-import Footer from '@/components/Footer'
+import Footer from '@/components/footer/Footer'
 
 
 const page = () => {

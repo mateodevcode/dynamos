@@ -1,11 +1,11 @@
-import logoDynamo from "../img/logo/logo-dynamo.png";
-import { enlacesNavbar } from "../data/enlaces.navbar";
-import EnlaceNavbar from "./EnlaceNavbar";
-import ModoDark from "./ModoDark";
-import MenuHamburger from "./MenuHamburger";
+import logoDynamo from "@/img/logo/logo-dynamo.png";
+import { enlacesNavbar } from "@/data/enlaces.navbar";
+import EnlaceNavbar from "@/components/navbar/EnlaceNavbar";
+import ModoDark from "@/components/ModoDark";
+import MenuHamburger from "@/components/navbar/MenuHamburger";
 import Link from "next/link";
 import Image from "next/image";
-import UserNavbar from "./UserNavbar";
+import UserNavbar from "@/components/UserNavbar";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 

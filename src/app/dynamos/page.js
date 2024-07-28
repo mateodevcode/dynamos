@@ -1,6 +1,6 @@
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import SomosDynamosNew from '@/components/SomosDynamosNew'
+import Navbar from '@/components/navbar/Navbar'
+import Footer from '@/components/footer/Footer'
+import SomosDynamosNew from '@/components/dynamos/SomosDynamosNew'
 import React from 'react'
 
 const page = () => {

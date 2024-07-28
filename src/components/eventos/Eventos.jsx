@@ -1,4 +1,4 @@
-import CardEvento from "./CardEvento.jsx";
+import CardEvento from "@/components/eventos/CardEvento";
 
 function Eventos() {
   return (

@@ -1,6 +1,6 @@
-import Eventos from "@/components/Eventos"
-import Footer from "@/components/Footer"
-import BarraDeNavegacion from "@/components/Navbar"
+import Eventos from "@/components/eventos/Eventos"
+import Footer from "@/components/footer/Footer"
+import BarraDeNavegacion from "@/components/navbar/Navbar"
 
 
 function EventosPage() {

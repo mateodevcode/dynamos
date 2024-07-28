@@ -1,8 +1,8 @@
 "use client";
-import logoDynamo from "../img/logo/logo-dynamo.png";
-import { enlacesFooter } from "../data/enlaces.footer";
-import EnlacesIconsFooter from "./EnlacesIconsFooter";
-import { enlacesIconFooter } from "../data/enlaces.icon.footer";
+import logoDynamo from "@/img/logo/logo-dynamo.png";
+import { enlacesFooter } from "@/data/enlaces.footer";
+import EnlacesIconsFooter from "@/components/footer/EnlacesIconsFooter";
+import { enlacesIconFooter } from "@/data/enlaces.icon.footer";
 import Link from "next/link";
 import Image from "next/image";
 

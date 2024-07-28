@@ -1,6 +1,6 @@
-import vision1 from "../img/somosdynamos/vision1.jpeg";
-import vision2 from "../img/somosdynamos/vision2.jpeg";
-import { vision } from "../data/misionVisionObjetivos";
+import vision1 from "@/img/somosdynamos/vision1.jpeg";
+import vision2 from "@/img/somosdynamos/vision2.jpeg";
+import { vision } from "@/data/misionVisionObjetivos";
 import Image from "next/image";
 
 function Vision() {

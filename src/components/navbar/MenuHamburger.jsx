@@ -9,9 +9,9 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { BsList } from "react-icons/bs";
-import { enlacesNavbar } from "../data/enlaces.navbar";
-import EnlaceNavbar from "./EnlaceNavbar";
-import logoDynamo from "../img/logo/logo-dynamo.png";
+import { enlacesNavbar } from "@/data/enlaces.navbar";
+import EnlaceNavbar from "@/components/navbar/EnlaceNavbar";
+import logoDynamo from "@/img/logo/logo-dynamo.png";
 import Link from "next/link";
 import Image from "next/image";
 
