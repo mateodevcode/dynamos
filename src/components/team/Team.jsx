@@ -1,6 +1,6 @@
 "use client";
 import { Spinner } from "@chakra-ui/react";
-import AddUserTeam from "./AddUserTeam";
+import AddUserTeam from "@/components/team/AddUserTeam";
 import CardTeam from "./CardTeam";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
@@ -51,7 +51,7 @@ function Team() {
                 Team Dynamos
               </h2>
               <p
-                className={`text-center md:text-2xl sm:text-base md:mb-10 sm:mb-5 text-black dark:text-white lg:mx-40 md:mx-40 sm:mx-8`}
+                className={`text-center md:text-2xl sm:text-base md:mb-10 sm:mb-5 text-black dark:text-white lg:mx-40 md:mx-20 sm:mx-8`}
               >
                 Únete a nuestra <strong>comunidad Dynamos</strong>, donde el
                 amor y la fe nos unen. Juntos crecemos espiritualmente y

@@ -7,7 +7,7 @@ import {
   RadioGroup,
   Stack,
 } from "@chakra-ui/react";
-import EstadoActualizado from "./EstadoActualizado";
+import EstadoActualizado from "@/components/datos-perfil/EstadoActualizado";
 
 
 const DatosPerfil = ({ user }) => {

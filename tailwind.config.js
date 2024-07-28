@@ -15,13 +15,16 @@ module.exports = {
     },
     screens: {
       sm: "350px",
-      // => @media (min-width: 576px) { ... }
+      // => @media (min-width: 350px) { ... }
 
-      md: "960px",
+      md: "760px",
       // => @media (min-width: 960px) { ... }
 
       lg: "1440px",
       // => @media (min-width: 1440px) { ... }
+      
+      xl: "1920px",
+      // => @media (min-width: 1920px) { ... }
     },
     backgroundImage: {
       "imagen-aboutus": "url('../img/somosdynamos/fondo-pendon.png')",

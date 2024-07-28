@@ -21,7 +21,7 @@ function MenuHamburger() {
 
   return (
     <>
-      <BsList onClick={onOpen} className="mx-4 text-2xl md:hidden" />
+      <BsList onClick={onOpen} className="mx-4 text-2xl md:flex md:mx-4 lg:hidden" />
       <Drawer
         isOpen={isOpen}
         placement="left"
@@ -31,7 +31,6 @@ function MenuHamburger() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton className="bg-white text-black dark:bg-black dark:text-white" />
-
           <DrawerBody className="bg-white dark:bg-gray-950 text-black dark:text-white">
             <div className="flex flex-col justify-between items-start">
               <div

@@ -1,6 +1,6 @@
 import Footer from "@/components/footer/Footer"
 import BarraDeNavegacion from "@/components/navbar/Navbar"
-import Team from "@/components/Team"
+import Team from "@/components/team/Team"
 
 function TeamPages() {
     return (

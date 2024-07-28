@@ -6,7 +6,7 @@ function Eventos() {
       className={`w-full flex flex-col justify-center items-center lg:pt-24 md:pt-24 sm:pt-12 bg-white dark:bg-gray-950`}
     >
       <div className="flex flex-col justify-center items-center w-10/12">
-        <div className="md:w-11/12 sm:w-11/12 dark:text-white text-black">
+        <div className="lg:w-11/12 md:w-full sm:w-11/12 dark:text-white text-black">
           <h2 className="lg:text-5xl md:text-5xl font-bold md:mb-10 sm:text-3xl sm:mt-10 sm:mb-5 sm:text-center">
             Eventos Dynamos
           </h2>
@@ -17,7 +17,7 @@ function Eventos() {
             nosotros en este momento especial!
           </p>
         </div>
-        <div className="flex flex-wrap justify-center items-start sm:w-11/12 sm:mb-10 md:mb-40">
+        <div className="flex flex-wrap justify-center items-start w-full sm:mb-10 md:mb-40">
           <CardEvento />
         </div>
       </div>

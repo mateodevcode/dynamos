@@ -24,7 +24,7 @@ import {
   BsYoutube,
 } from "react-icons/bs";
 import { TbWorldWww } from "react-icons/tb";
-import AlertaUserTeam from "./AlertaUserTeam";
+import AlertaUserTeam from "@/components/team/AlertaUserTeam";
 import { IoPersonAdd } from "react-icons/io5";
 
 function AddUserTeam() {

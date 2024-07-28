@@ -1,14 +1,14 @@
-import React from 'react'
 import Navbar from '@/components/navbar/Navbar'
-import ClientDatosPerfil from '@/components/ClientDatosPerfil'
+import ClientDatosPerfil from '@/components/datos-perfil/ClientDatosPerfil'
 import Footer from '@/components/footer/Footer'
+import BarraDeNavegacion from '@/components/navbar/Navbar'
 
 
 const page = () => {
   
   return (
     <>
-    <Navbar />
+    <BarraDeNavegacion />
     <ClientDatosPerfil />
     <Footer />
     </>

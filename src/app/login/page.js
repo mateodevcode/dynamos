@@ -1,4 +1,4 @@
-import FormLogin from "@/components/FormLogin";
+import FormLogin from "@/components/login/FormLogin";
 import React from "react";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";

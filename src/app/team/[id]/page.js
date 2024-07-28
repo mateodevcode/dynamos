@@ -1,4 +1,4 @@
-import CardTeamOne from "@/components/CardTeamOne";
+import CardTeamOne from "@/components/team/CardTeamOne";
 
 const page = () => {
 

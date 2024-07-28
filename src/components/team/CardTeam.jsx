@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import EnlacesIconTeam from "./EnlacesIconTeam";
+import EnlacesIconTeam from "@/components/team/EnlacesIconTeam";
 
 const CardTeam = ({ teamDynamo }) => {
 

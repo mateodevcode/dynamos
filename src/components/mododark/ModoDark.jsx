@@ -19,7 +19,7 @@ const ModoDark = () => {
 
   return (
     <div
-      className="flex flex-row justify-center items-center lg:mr-10 md:mr-10 sm:mr-0 sm:ml-5"
+      className="flex flex-row justify-center items-center lg:mr-10 md:mr-0 sm:mr-0 sm:ml-5"
       onClick={toggleDark}
     >
       {dark == "dark" ? (

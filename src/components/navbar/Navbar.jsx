@@ -1,11 +1,11 @@
 import logoDynamo from "@/img/logo/logo-dynamo.png";
 import { enlacesNavbar } from "@/data/enlaces.navbar";
 import EnlaceNavbar from "@/components/navbar/EnlaceNavbar";
-import ModoDark from "@/components/ModoDark";
+import ModoDark from "@/components/mododark/ModoDark";
 import MenuHamburger from "@/components/navbar/MenuHamburger";
 import Link from "next/link";
 import Image from "next/image";
-import UserNavbar from "@/components/UserNavbar";
+import UserNavbar from "@/components/navbar/UserNavbar";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
@@ -15,14 +15,14 @@ async function BarraDeNavegacion() {
   console.log("session", session);
 
   return (
-    <div className="flex flex-col justify-start items-start z-50 ">
+    <div className="flex flex-col justify-start items-start z-50">
       <div
-        className={`w-full h-12 flex flex-row items-center lg:justify-between md:justify-around sm:justify-between dark:text-white border-gray-200 dark:border-gray-500 border-b-2 z-10 fixed bg-white/50 dark:bg-gray-900/50 shadow-md shadow-black/80 dark:shadow-white/50`}
+        className={`w-full h-12 flex flex-row items-center lg:justify-between md:justify-between sm:justify-between dark:text-white border-gray-200 dark:border-gray-500 border-b-2 z-10 fixed bg-white/50 dark:bg-gray-900/50 shadow-md shadow-black/80 dark:shadow-white/50`}
       >
         {/* Imagen principal */}
         <Link href={"/"}>
           <Image
-            className="w-8 lg:mx-40 md:mx-40 sm:mx-8 animate-bounce"
+            className="w-8 lg:mx-40 md:mx-8 sm:mx-8 animate-bounce"
             src={logoDynamo}
             alt="Logo de Dynamo"
             width={32}
@@ -32,7 +32,7 @@ async function BarraDeNavegacion() {
 
         {/* Un map de los enlaces */}
         <div
-          className={`md:flex flex-row justify-center items-center sm:hidden`}
+          className={`lg:flex md:hidden flex-row justify-center items-center sm:hidden`}
         >
           {enlacesNavbar.map((enlace, index) => {
             return (

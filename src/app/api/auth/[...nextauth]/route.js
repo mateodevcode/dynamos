@@ -58,7 +58,11 @@ export const authOptions = {
           const userExists = await UserGoogle.findOne({ email });
 
           if (!userExists) {
-            const res = await fetch("https://dynamos-peach.vercel.app/api/user", {
+            // descomentar para subir a vercel
+            // const res = await fetch("https://dynamos-peach.vercel.app/api/user", {
+            
+            // Comentar para subir a vercel
+            const res = await fetch("http://localhost:3000/api/user", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

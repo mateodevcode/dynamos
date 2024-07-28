@@ -1,8 +1,8 @@
 "use client";
 import { Input } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import DatosPerfil from "./DatosPerfil";
-import AlertaEmailVacio from "./AlertaEmailVacio";
+import DatosPerfil from "@/components/datos-perfil/DatosPerfil";
+import AlertaEmailVacio from "@/components/datos-perfil/AlertaEmailVacio";
 
 const ClientDatosPerfil = () => {
   const [email, setEmail] = useState("");

@@ -1,4 +1,4 @@
-import FormRegister from "@/components/FormRegister";
+import FormRegister from "@/components/register/FormRegister";
 import React from "react";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
