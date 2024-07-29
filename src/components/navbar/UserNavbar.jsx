@@ -10,7 +10,7 @@ const UserNavbar = () => {
   const { data: session, status } = useSession();
 
   return (
-    <div className="flex flex-row justify-end items-center text-black lg:px-2 md:px-0 sm:px-0 md:hidden">
+    <div className="flex flex-row justify-end items-center text-black lg:px-2 md:px-0 sm:px-0">
       <div className="my-1 font-semibold dark:text-white select-none sm:hidden lg:flex md:flex">
         {session?.user?.name}
       </div>
@@ -30,7 +30,7 @@ const UserNavbar = () => {
             rightIcon={<AiOutlineLogout />}
             colorScheme="black"
             variant="outline"
-            className="dark:text-white"
+            className="dark:text-white hover:bg-black/20 dark:hover:bg-gray-300/20"
           >
             Salir
           </Button>

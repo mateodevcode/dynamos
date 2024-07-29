@@ -46,13 +46,13 @@ function FormLogin() {
 
   return (
     <div className="flex h-screen items-center justify-center dark: dark:bg-gray-950 text-black">
-      <div className=" max-w-md md:w-full p-10 rounded-xl bg-blue-600/20 rounded-xl py-20">
-        <div className="w-full flex justify-center items-center md:mb-5 sm:mb-3">
+      <div className="max-w-md md:w-full sm:w-full p-10 rounded-xl bg-blue-400/10 py-20">
+        <div className="w-full flex justify-center items-center sm:pb-10">
           <Link href="/">
             <Image
               src={logoDynamos}
               alt="Imagen del logo dynamos"
-              className="md:w-24 sm:w-20 animate-pulse"
+              className="lg:w-24 md:w-24 sm:w-20 animate-pulse"
             />
           </Link>
         </div>
@@ -86,10 +86,10 @@ function FormLogin() {
           <button 
           onClick={() => signIn("google")}
           type="button"
-          className="bg-gray-100 hover:bg-gray-300 text-black w-full p-2 rounded-lg my-2 flex justify-start items-center font-semibold">
+          className="bg-gray-100 hover:bg-gray-300 text-black w-full p-2 rounded-lg my-2 flex justify-start items-center font-semibold lg:text-base md:text-base sm:text-base">
             <FcGoogle
             height={20}
-            className="ml-4 lg:mr-14 md:mr-14 sm:mr-8 text-xl" />Inicia sesión con Google
+            className="lg:ml-4 md:ml-4 sm:ml-4 lg:mr-16 md:mr-16 sm:mr-10 text-xl" />Inicia sesión con Google
           </button>
           {/* <button 
           onClick={() => signIn("google")}
@@ -108,7 +108,7 @@ function FormLogin() {
         )}
         <p className=" mt-4 flex gap-x-2 justify-between select-none dark:text-white">
           ¿No tienes cuenta?{" "}
-          <Link href="/register" className="text-sky-500 hover:text-zinc-500">
+          <Link href="/register" className="text-sky-500 hover:text-zinc-500 font-semibold">
             Registrate
           </Link>
         </p>

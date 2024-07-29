@@ -72,7 +72,7 @@ function FormRegister() {
   return (
     <div className="flex justify-center h-screen items-center md:p-10 rounded-md dark:bg-gray-950 dark:text-white">
       <div className="max-w-md w-full p-10 bg-blue-600/20 rounded-xl py-20">
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full flex justify-center items-center mb-10">
           <Link href="/">
             <Image
               src={logoDynamos}
@@ -142,7 +142,7 @@ function FormRegister() {
         )}
         <p className="text-black mt-3 p-3 flex gap-x-2 justify-between bg-gray-100 select-none md:text-base sm:text-sm">
           ¿Ya tienes una cuenta?
-          <Link href="/login" className="text-indigo-600 hover:text-zinc-500">
+          <Link href="/login" className="text-indigo-600 hover:text-zinc-500 font-semibold">
             Iniciar sesión
           </Link>
         </p>
