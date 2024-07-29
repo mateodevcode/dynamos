@@ -43,7 +43,7 @@ const CardTestimonio = ({ testimonioDynamo }) => {
           />
         </div>
         <div className="flex flex-col md:w-7/12 lg:ml-20 md:ml-10 sm:w-10/12">
-          <div className="flex flex-col md:w-full sm:w-10/12 sm:text-justify overflow-auto prueba">
+          <div className="flex flex-col md:w-full sm:w-full sm:text-justify overflow-auto prueba">
             <p
               className={`lg:text-base md:text-sm md:mb-5 sm:text-xs sm:mb-1 italic md:h-40 sm:h-24 font-serif`}
             >
