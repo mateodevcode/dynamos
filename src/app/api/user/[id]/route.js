@@ -6,7 +6,7 @@ import UserGoogle from "@/models/userGoogle";
 export async function GET(request, { params }) {
   try {
     connectMongoDB();
-    const UserEncontrado = await UserGoogle.findOne({"email": params.id}) || User.findOne({"email": params.id});
+    const UserEncontrado = await UserGoogle.findOne({"email": params.id});
     if (!UserEncontrado)
       return NextResponse.json(
         {
