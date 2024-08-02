@@ -57,11 +57,11 @@ body {
 
 .hexagono2 {
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  background-image: url(../img/somosdynamos/objgeneral1.png);
+  background-image: url(https://i.postimg.cc/0N5Yswzq/objgeneral1.jpg);
   filter: brightness(0.4)
 }
 
-.hexagono1 {
+.hexagonoFondo{
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 

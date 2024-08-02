@@ -8,14 +8,28 @@ export const vision = {
   contenido: `Ser reconocidos como líderes en el ámbito espiritual y social, extendiendo nuestro alcance para transformar vidas y comunidades a través de la restauración del avivamiento, la implementación de valores cristianos y el servicio compasivo.`,
 };
 
-export const objetivoGeneral = {
-  titulo: "Objetivo General",
-  contenido: `Extender nuestra presencia y efectividad en el desarrollo de actividades y proyectos espirituales y sociales durante los próximos años, con el fin de lograr un impacto positivo significativo en las familias y comunidades a las que servimos.`,
-};
+export const objetivo = [
+  {
+    titulo: "objetivos",
+    subtitulo: "objetivo general",
+    contenido: `Extender nuestra presencia y efectividad en el desarrollo de actividades y proyectos espirituales y sociales durante los próximos años, con el fin de lograr un impacto positivo significativo en las familias y comunidades a las que servimos.`,
+    contenido2: null,
+    contenido3: null,
+  },
 
-export const objetivosEspecificos = {
-  titulo: "Objetivos Especificos",
-  contenido: `1. Restaurar el avivamiento espiritual mediante la enseñanza y práctica de los principios cristianos, llevando esperanza y renovación a aquellos que lo necesitan.`,
-  contenido2: `2.  Implementar valores cristianos en las familias a través de programas educativos, asesoramiento pastoral y actividades prácticas que fortalezcan los lazos familiares y promuevan un estilo de vida basado en la fe.`,
-  contenido3: `3. Mostrar amor y compasión a través del servicio activo a la población vulnerable, brindando apoyo emocional, material y espiritual a quienes enfrentan dificultades y desafíos en la vida.`,
-};
+  {
+    titulo: "Objetivos Especificos",
+    subtitulo: null,
+    contenido: `1. Restaurar el avivamiento espiritual mediante la enseñanza y práctica de los principios cristianos, llevando esperanza y renovación a aquellos que lo necesitan.`,
+    contenido2: `2.  Implementar valores cristianos en las familias a través de programas educativos, asesoramiento pastoral y actividades prácticas que fortalezcan los lazos familiares y promuevan un estilo de vida basado en la fe.`,
+    contenido3: `3. Mostrar amor y compasión a través del servicio activo a la población vulnerable, brindando apoyo emocional, material y espiritual a quienes enfrentan dificultades y desafíos en la vida.`,
+  },
+];
+
+// export const objetivosEspecificos = {
+//   titulo: "Objetivos Especificos",
+//   subtitulo: null,
+//   contenido: `1. Restaurar el avivamiento espiritual mediante la enseñanza y práctica de los principios cristianos, llevando esperanza y renovación a aquellos que lo necesitan.`,
+//   contenido2: `2.  Implementar valores cristianos en las familias a través de programas educativos, asesoramiento pastoral y actividades prácticas que fortalezcan los lazos familiares y promuevan un estilo de vida basado en la fe.`,
+//   contenido3: `3. Mostrar amor y compasión a través del servicio activo a la población vulnerable, brindando apoyo emocional, material y espiritual a quienes enfrentan dificultades y desafíos en la vida.`,
+// };

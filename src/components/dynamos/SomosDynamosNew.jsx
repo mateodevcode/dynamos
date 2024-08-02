@@ -1,7 +1,7 @@
-import Mision from "@/components/dynamos/Mision";
-import ObjGeneral from "@/components/dynamos/ObjGeneral";
-import ObjEspecificos from "@/components/dynamos/ObjEspecificos";
-import Vision from "@/components/dynamos/Vision";
+import Mision from "@/components/dynamos/mision_vision/Mision";
+import ObjGeneral from "@/components/dynamos/objetivos/general/ObjGeneral";
+import ObjEspecificos from "@/components/dynamos/objetivos/especificos/ObjEspecificos";
+import Vision from "@/components/dynamos/mision_vision/Vision";
 
 function SomosDynamosNew() {
   return (
