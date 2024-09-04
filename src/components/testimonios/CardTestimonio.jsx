@@ -1,68 +1,54 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import {
-  BsFillArrowLeftSquareFill,
-  BsFillArrowRightSquareFill,
-} from "react-icons/bs";
+import { comma } from "@/data/comma";
+import Testimonio from "./Testimonio";
+import Image from "next/image";
 
-const CardTestimonio = ({ testimonioDynamo }) => {
-  const [contador, setContador] = useState(0);
-
-  const onclickAdelante = () => {
-    setContador(contador + 1);
-  };
-
-  const onclickAtras = () => {
-    setContador(contador - 1);
-  };
-
-  useEffect(() => {
-    const lonTestimonios = testimonioDynamo.length;
-    if (contador == lonTestimonios - 1) {
-      setContador(0);
-    }
-    if (contador == 0) {
-      setContador(1);
-    }
-  }, [contador]);
+const CardTestimonio = ({testimonioDynamo}) => {
 
   return (
-    <>
-      <BsFillArrowLeftSquareFill
-        className="lg:text-6xl md:text-6xl cursor-pointer sm:text-3xl md:mx-6"
-        onClick={onclickAtras}
-      />
-      <div
-        className={`lg:w-8/12 md:w-full md:h-96 flex md:flex-row sm:flex-col justify-center items-center select-none sm:mt-16 sm:mb-20 sm:w-9/12 sm:h-96 shadow-lg shadow-black/50 sm:rounded-xl dark:shadow-white/50 dark:shadow-lg dark:rounded-xl dark:bg-gray-950`}
-      >
-        <div className="md:mt-0 sm:-mt-24 md:-mb-0 sm:mb-5">
-          <img
-            src={testimonioDynamo[contador].img}
-            alt={`Testimonio de ${testimonioDynamo[contador].nombre}`}
-            className="lg:w-60 md:w-80 rounded-3xl lg:scale-125 md:scale-100 md:mr-0 sm:w-36 sm:scale-100 sm:mr-3"
-          />
-        </div>
-        <div className="flex flex-col md:w-7/12 lg:ml-20 md:ml-10 sm:w-10/12">
-          <div className="flex flex-col md:w-full sm:w-full sm:text-justify overflow-auto prueba">
-            <p
-              className={`lg:text-base md:text-sm md:mb-5 sm:text-xs sm:mb-1 italic md:h-40 sm:h-24 font-serif`}
-            >
-              {testimonioDynamo[contador].testimonio}
-            </p>
-          </div>
-          <p className={`md:mb-2 md:text-xl sm:text-xs sm:mb-1 mt-2`}>
-            <strong>{testimonioDynamo[contador].nombre}</strong>
-          </p>
-          <p className={`lg:text-xl md:text-lg sm:text-xs`}>
-            {testimonioDynamo[contador].cargo}
-          </p>
+    <div className="text-gray-600 body-font dark:bg-gray-950">
+      <div className="container lg:px-32 md:px-0 sm:px-5 py-24 mx-auto">
+        {/* <h2 className="text-center font-bold select-none text-black dark:text-white lg:mt-10 md:mt-10 sm:mt-5 lg:mb-20 md:mb-20 sm:mb-10 font-sans lg:text-5xl md:text-5xl sm:text-3xl">
+          Nuestros Testimonios
+        </h2> */}
+        <div className="flex flex-wrap -m-4">
+          {testimonioDynamo.map((testimonio, index) => (
+            <div className="p-4 md:w-1/2 w-full" key={index}>
+              <div className="h-full bg-gray-100 dark:bg-gray-900 p-8 rounded">
+                <div className="block w-5 h-5 text-gray-400 mb-4">
+                  {comma.icon}
+                </div>
+                <p className="leading-relaxed mb-6 dark:text-white text-black">
+                  {testimonio.testimonio}
+                </p>
+                <div className="flex flex-row justify-between items-center">
+                  <div className="inline-flex items-center">
+                    <Image
+                      alt="testimonial"
+                      src={testimonio.img}
+                      className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+                      width={106}
+                      height={106}
+                    />
+                    <span className="flex-grow flex flex-col pl-4 justify-start items-start">
+                      <span className="title-font font-medium text-gray-900 dark:text-white">
+                        {testimonio.nombre}
+                      </span>
+                      <span className="text-gray-500 text-sm">
+                        {testimonio.cargo}
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <Testimonio id={testimonio._id} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-      <BsFillArrowRightSquareFill
-        className="lg:text-6xl md:text-6xl cursor-pointer sm:text-3xl md:mx-6"
-        onClick={onclickAdelante}
-      />
-    </>
+    </div>
   );
 };
 

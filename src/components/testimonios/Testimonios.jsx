@@ -1,6 +1,7 @@
 "use client";
-import CardTestimonio from "@/components/testimonios/CardTestimonio";
 import { useEffect, useState } from "react";
+import CardTestimonio from "./CardTestimonio";
+import { Spinner } from "@chakra-ui/react";
 
 const Testimonios = () => {
   const [testimonioDynamo, setTestimonioDynamo] = useState([]);
@@ -23,7 +24,18 @@ const Testimonios = () => {
           Nuestros Testimonios
         </h2>
         <div className="w-full flex justify-center items-center text-black dark:text-white">
-          <CardTestimonio testimonioDynamo={testimonioDynamo} />
+          {testimonioDynamo.length === 0 ? (
+            <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="red.500"
+              size="xl"
+              my="20"
+            />
+          ) : (
+            <CardTestimonio testimonioDynamo={testimonioDynamo} />
+          )}
         </div>
       </div>
     </div>

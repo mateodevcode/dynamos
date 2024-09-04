@@ -43,7 +43,7 @@ function Mision() {
         />
         <Image
           className="lg:w-64 lg:h-56 lg:my-2 md:w-64 md:h-56 md:my-2 sm:w-48 sm:h-28 sm:my-1"
-          src=" https://i.postimg.cc/HWRHgWB6/mision3.jpg"
+          src="https://i.postimg.cc/HWRHgWB6/mision3.jpg"
           alt=""
           width={600} height={600}
         />

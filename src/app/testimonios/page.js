@@ -1,13 +1,13 @@
 import Footer from "@/components/footer/Footer"
 import Navbar from "@/components/navbar/Navbar"
-import Testimo from "@/components/testimonios/Testimo"
+import Testimonios from "@/components/testimonios/Testimonios"
 
 function TestimoniosPage() {
 
     return (
       <div>
           <Navbar />
-          <Testimo />
+          <Testimonios />
           <Footer />
       </div>
     )

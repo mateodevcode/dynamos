@@ -59,7 +59,7 @@ export const authOptions = {
 
           if (!userExists) {
             // descomentar para subir a vercel
-            const res = await fetch("https://dynamos-peach.vercel.app/api/user", {
+            const res = await fetch("https://iglesia-dynamos.vercel.app/api/user", {
 
             // Comentar para subir a vercel
             // const res = await fetch("http://localhost:3000/api/user", {
