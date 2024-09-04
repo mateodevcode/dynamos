@@ -4,7 +4,7 @@ import Eventos from "@/components/eventos/Eventos";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import Team from "@/components/team/Team";
-import Testimo from "@/components/testimonios/Testimo";
+import Testimonios from "@/components/testimonios/Testimonios";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <Bienvenida />
       <SomosDynamosNew />
       <Eventos />
-      <Testimo />
+      <Testimonios />
       <Team />
       <Footer />
     </div>
