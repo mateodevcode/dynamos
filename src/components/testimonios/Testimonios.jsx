@@ -24,7 +24,9 @@ const Testimonios = () => {
           Nuestros Testimonios
         </h2>
         <div className="w-full flex justify-center items-center text-black dark:text-white">
-          {testimonioDynamo.length === 0 ? (
+          {testimonioDynamo.length > 0 ? (
+            <CardTestimonio testimonioDynamo={testimonioDynamo} />
+          ) : (
             <Spinner
               thickness="4px"
               speed="0.65s"
@@ -33,8 +35,6 @@ const Testimonios = () => {
               size="xl"
               my="20"
             />
-          ) : (
-            <CardTestimonio testimonioDynamo={testimonioDynamo} />
           )}
         </div>
       </div>
