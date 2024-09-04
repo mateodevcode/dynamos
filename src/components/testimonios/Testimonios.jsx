@@ -8,7 +8,12 @@ const Testimonios = () => {
 
   useEffect(() => {
     const testimonios = async () => {
-      const res = await fetch("http://localhost:3000/api/testimonio");
+      const res = await fetch("/api/testimonio", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       const data = await res.json();
       setTestimonioDynamo(data);
     };
