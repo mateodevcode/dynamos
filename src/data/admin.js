@@ -1,0 +1,1 @@
+export const Admin = "bysteffler@gmail.com";

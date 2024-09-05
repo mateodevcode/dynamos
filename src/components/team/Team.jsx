@@ -5,19 +5,15 @@ import CardTeam from "./CardTeam";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import HeaderTeam from "./HeaderTeam";
+import IsAdministrador from "@/config/IsAdministrador";
+
 
 function Team() {
   const [teamDynamo, setTeamDynamo] = useState([]);
-  const [admin, setAdmin] = useState(false);
   const { data: session } = useSession();
 
-  useEffect(() => {
-    if (session?.user?.email === "bysteffler@gmail.com") {
-      setAdmin(true);
-    } else {
-      setAdmin(false);
-    }
-  }, [session]);
+  IsAdministrador(session);
+  const isAdmin = IsAdministrador(session);
 
   useEffect(() => {
     const cargarUserTeam = async () => {
@@ -55,7 +51,7 @@ function Team() {
               )}
             </div>
           </div>
-          {admin && <AddUserTeam />}
+          {isAdmin && <AddUserTeam />}
         </div>
       )}
     </>

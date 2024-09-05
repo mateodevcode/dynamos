@@ -6,21 +6,18 @@ import Link from "next/link";
 import { Spinner } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import IsAdministrador from "@/config/IsAdministrador";
+
 
 const CardTeamOne = () => {
   const [team, setTeam] = useState(null);
   const Params = useParams();
   const router = useRouter();
-  const [admin, setAdmin] = useState(false);
   const { data: session } = useSession();
 
-  useEffect(() => {
-    if (session?.user?.email === "bysteffler@gmail.com") {
-      setAdmin(true);
-    } else {
-      setAdmin(false);
-    }
-  }, [session]);
+  IsAdministrador(session);
+  const isAdmin = IsAdministrador(session);
+
 
   const handleDelete = async () => {
     if (window.confirm("¿Estás seguro de eliminar este usuario?")) {
@@ -86,7 +83,7 @@ const CardTeamOne = () => {
       )}
       {team && (
         <div>
-          {admin && (
+          {isAdmin && (
             <button
               type="button"
               onClick={() => handleDelete()}
@@ -95,7 +92,7 @@ const CardTeamOne = () => {
               Eliminar
             </button>
           )}
-          {admin && (
+          {isAdmin && (
             <button
               type="button"
               className="mt-4 bg-green-600 hover:bg-green-400 text-white rounded-lg px-3 py-2 select-none font-semibold dark mx-2"

@@ -7,7 +7,7 @@ import { enlacesNavbar, logo } from "@/data/navbar";
 
 function Footer() {
   return (
-    <div className="flex flex-col justify-center items-center pt-20 pb-10 bg-white dark:bg-gray-950 text-black dark:text-white">
+    <div className="flex flex-col justify-center items-center pt-20 pb-10 bg-white dark:bg-gray-950 text-black dark:text-white w-full">
       <Link href="/">
         <Image
           src={logo.src}
@@ -17,6 +17,9 @@ function Footer() {
           height={400}
         />
       </Link>
+      
+        {/* <Categoria /> */}
+      
       <div className="md:flex flex-row sm:hidden md:my-4 pt-10">
         {enlacesNavbar.map((enlace, i) => {
           return (

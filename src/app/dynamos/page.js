@@ -1,6 +1,6 @@
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
-import SomosDynamos from '@/components/dynamos/SomosDynamos'
+import SomosDynamos from '@/components/dynamos/SomosDynamosNew'
 
 const page = () => {
   return (
