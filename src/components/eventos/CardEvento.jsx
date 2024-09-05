@@ -1,26 +1,8 @@
-"use client";
 import Image from "next/image";
 import DrawerEventos from "@/components/eventos/DrawerEventos";
-import { useEffect, useState } from "react";
 import FechaFinal from "./FechaFinal";
 
-const CardEvento = () => {
-  const [eventos, setEventos] = useState([]);
-
-  useEffect(() => {
-    const cargarEventos = async () => {
-      const response = await fetch("/api/evento", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await response.json();
-      setEventos(data.reverse());
-    };
-    cargarEventos();
-  }, []);
-
+const CardEvento = ({eventos}) => {
 
   return (
     <>
@@ -61,7 +43,6 @@ const CardEvento = () => {
       ))}
     </>
   );
-  // });
 };
 
 export default CardEvento;

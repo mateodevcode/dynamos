@@ -1,11 +1,11 @@
 import Footer from "@/components/footer/Footer"
-import BarraDeNavegacion from "@/components/navbar/Navbar"
+import Navbar from "@/components/navbar/Navbar"
 import Team from "@/components/team/Team"
 
 function TeamPages() {
     return (
       <>
-          <BarraDeNavegacion />
+          <Navbar />
           <Team />
           <Footer />
       </>

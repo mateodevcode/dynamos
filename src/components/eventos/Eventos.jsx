@@ -1,6 +1,25 @@
+"use client";
 import CardEvento from "@/components/eventos/CardEvento";
+import { Spinner } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 function Eventos() {
+  const [eventos, setEventos] = useState([]);
+
+  useEffect(() => {
+    const cargarEventos = async () => {
+      const response = await fetch("/api/evento", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      setEventos(data.reverse());
+    };
+    cargarEventos();
+  }, []);
+
   return (
     <div
       className={`w-full flex flex-col justify-center items-center lg:pt-24 md:pt-24 sm:pt-12 bg-white dark:bg-gray-950`}
@@ -17,8 +36,18 @@ function Eventos() {
             nosotros en este momento especial!
           </p>
         </div>
+        {eventos.length === 0 && (
+          <Spinner
+            thickness="4px"
+            speed="1.5s"
+            emptyColor="gray.200"
+            color="red.500"
+            size="xl"
+            my="20"
+          />
+        )}
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 lg:w-full md:w-10/12 sm:mb-10 md:mb-40">
-          <CardEvento />
+          <CardEvento eventos={eventos} />
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@ const Register = () => {
             <FcGoogle className="text-2xl" />
           </div>
           <div
-            className="px-4 py-2 bg-green-600 hover:bg-green-400 rounded-3xl font-semibold my-5 text-white cursor-pointer"
+            className="px-4 py-2 bg-green-600 hover:bg-green-400 rounded-3xl font-semibold my-5 text-white cursor-pointer select-none"
             onClick={() => signIn("google")}
           >
             Registrate
