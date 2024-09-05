@@ -9,46 +9,46 @@ import {
 import { TbWorldWww } from "react-icons/tb";
 
 function EnlacesIconEvento({ valores }) {
-  const valor = valores;
+
   return (
     <div className="team-icons flex flex-row justify-center items-center">
-      {valor.redes.facebook && (
-        <Link href={valor.redes.facebook} target="_blank">
+      {valores.redes.facebook && (
+        <Link href={valores.redes.facebook} target="_blank">
           <BsFacebook
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />
         </Link>
       )}
-      {valor.redes.instagram && (
-        <Link href={valor.redes.instagram} target="_blank">
+      {valores.redes.instagram && (
+        <Link href={valores.redes.instagram} target="_blank">
           <BsInstagram
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />
         </Link>
       )}
-      {valor.redes.tikTok && (
-        <Link href={valor.redes.tikTok} target="_blank">
+      {valores.redes.tikTok && (
+        <Link href={valores.redes.tikTok} target="_blank">
           <BsTiktok
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />
         </Link>
       )}
-      {valor.redes.youTube && (
-        <Link href={valor.redes.youTube} target="_blank">
+      {valores.redes.youTube && (
+        <Link href={valores.redes.youTube} target="_blank">
           <BsYoutube
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />
         </Link>
       )}
-      {valor.redes.linkedIn && (
-        <Link href={valor.redes.linkedIn} target="_blank">
+      {valores.redes.linkedIn && (
+        <Link href={valores.redes.linkedIn} target="_blank">
           <BsLinkedin
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />
         </Link>
       )}
-      {valor.redes.web && (
-        <Link href={valor.redes.web} target="_blank">
+      {valores.redes.web && (
+        <Link href={valores.redes.web} target="_blank">
           <TbWorldWww
             className={`mx-2 text-2xl text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400`}
           />

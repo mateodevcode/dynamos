@@ -7,13 +7,13 @@ import {
   DrawerOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
 import Evento from "@/components/eventos/Evento";
 import { Button } from "../ui/button";
+import { useRef } from "react";
 
-function DrawerEventos({ imagenes: imagen, datosEvento }) {
+function DrawerEventos({ imagenes, evento }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = useRef();
 
   return (
     <>
@@ -36,9 +36,8 @@ function DrawerEventos({ imagenes: imagen, datosEvento }) {
             color={"white"}
             className="dark:bg-white dark:text-black bg-black text-white"
           />
-
           <DrawerBody className="bg-white dark:bg-gray-950">
-            <Evento imagenes={imagen} datosEvento={datosEvento} />
+            <Evento imagenes={imagenes} evento={evento} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>

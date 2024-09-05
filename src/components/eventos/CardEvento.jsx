@@ -1,75 +1,67 @@
 "use client";
-
 import Image from "next/image";
-import { eventos } from "@/data/eventoDynamo";
 import DrawerEventos from "@/components/eventos/DrawerEventos";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import FechaFinal from "./FechaFinal";
 
 const CardEvento = () => {
-  const [indiceSeleccionado, setIndiceSeleccionado] = useState(null);
-  const handleClick = (indice) => {
-    setIndiceSeleccionado(indice);
-  };
+  const [eventos, setEventos] = useState([]);
 
-  const image = eventos.map((evento) => {
-    4;
-    const img_eventos = [[evento.img]];
-    return img_eventos;
-  });
+  useEffect(() => {
+    const cargarEventos = async () => {
+      const response = await fetch("/api/evento", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      setEventos(data.reverse());
+    };
+    cargarEventos();
+  }, []);
 
-  const componentes_imagenes = [
-    [image[0][0][0]],
-    [image[1][0][0]],
-    [image[2][0][0]],
-    [image[3][0][0]],
-  ];
 
-  const event = eventos.map((evento) => {
-    return evento;
-  });
-
-  const datosEventos = [[event[0]], [event[1]], [event[2]], [event[3]]];
-
-  return eventos.map((valor, i) => {
-    return (
-      <div key={i} className="flex justify-center items-center sm:m-3 sm:mb-5">
+  return (
+    <>
+      {eventos.map((evento, i) => (
         <div
-          className={`flex flex-col justify-center items-center rounded-md scrol-img`}
-          onClick={() => handleClick(i)}
+          key={i}
+          className="flex justify-center items-center sm:m-3 sm:mb-5"
         >
-          <Image
-            src={valor.imgPrincipal}
-            alt={`evento ${valor.titulo}`}
-            className="w-80 h-96 rounded-xl mb-4"
-            width={600}
-            height={400}
-          />
-          <div className="flex flex-col justify-center items-start sm:text-xs md:text-base lg:text-base text-black dark:text-white">
-            <div className="flex mb-3 font-semibold">
-              <p>{valor.fecha}</p>
-              <Image
-                src={valor.imgAutor}
-                alt={`Imagen de ${valor.autor}`}
-                className="md:w-7 rounded-full md:mx-4 sm:mx-2 sm:w-5"
-                width={600}
-                height={400}
-              />
-              <p>{valor.autor}</p>
-            </div>
-            <p
-              className={`md:w-80 md:text-lg sm:text-justify sm:text-xs sm:w-80 mb-4 lg:h-28 md:h-28 sm:h-10`}
-            >
-              {valor.descripcion}
-            </p>
-            <DrawerEventos
-              imagenes={componentes_imagenes[indiceSeleccionado]}
-              datosEvento={datosEventos[indiceSeleccionado]}
+          <div className="flex flex-col justify-center items-center rounded-md scrol-img">
+            <Image
+              src={evento.imgPrincipal}
+              alt={`evento ${evento.titulo}`}
+              className="w-80 h-96 rounded-xl mb-4"
+              width={600}
+              height={400}
             />
+            <div className="flex flex-col justify-center items-start sm:text-xs md:text-base lg:text-base text-black dark:text-white">
+              <div className="flex mb-3 font-semibold">
+                <FechaFinal evento={evento} />
+                <Image
+                  src={evento.imgAutor}
+                  alt={`Imagen de ${evento.autor}`}
+                  className="md:w-7 rounded-full md:mx-4 sm:mx-2 sm:w-5"
+                  width={600}
+                  height={400}
+                />
+                <p>{evento.autor}</p>
+              </div>
+              <p
+                className={`md:w-80 md:text-lg sm:text-justify sm:text-xs sm:w-80 mb-4 lg:h-28 md:h-28 sm:h-10`}
+              >
+                {evento.descripcion}
+              </p>
+              <DrawerEventos imagenes={evento.img} evento={evento} />
+            </div>
           </div>
         </div>
-      </div>
-    );
-  });
+      ))}
+    </>
+  );
+  // });
 };
 
 export default CardEvento;
