@@ -1,6 +1,7 @@
-import Navbar from "@/components/admin/navbar";
-import { Panel } from "./Panel";
+import Navbar from "./Navbar";
 import Options from "./Options";
+import Panel from "./Panel";
+
 
 const PanelAdmin = () => {
   return (
