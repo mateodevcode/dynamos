@@ -38,10 +38,6 @@ export const login = {
     {
       nombre: "Registrarse",
       ruta: "/register",
-    },
-    {
-      nombre: "¿Olvidaste tu contraseña?",
-      ruta: "/forgot-password",
     }
   ],
 
