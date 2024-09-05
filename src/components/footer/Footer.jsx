@@ -1,10 +1,9 @@
 "use client";
-import { enlacesFooter } from "@/data/enlaces.footer";
 import EnlacesIconsFooter from "@/components/footer/EnlacesIconsFooter";
 import { enlacesIconFooter } from "@/data/enlaces.icon.footer";
 import Link from "next/link";
 import Image from "next/image";
-import { logo } from "@/data/navbar";
+import { enlacesNavbar, logo } from "@/data/navbar";
 
 function Footer() {
   return (
@@ -19,7 +18,7 @@ function Footer() {
         />
       </Link>
       <div className="md:flex flex-row sm:hidden md:my-4 pt-10">
-        {enlacesFooter.map((enlace, i) => {
+        {enlacesNavbar.map((enlace, i) => {
           return (
             <p
               key={i}

@@ -1,5 +1,5 @@
 import Bienvenida from "@/components/bienvenida/Bienvenida";
-import SomosDynamosNew from "@/components/dynamos/SomosDynamosNew";
+import SomosDynamos from "@/components/dynamos/SomosDynamos";
 import Eventos from "@/components/eventos/Eventos";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Bienvenida />
-      <SomosDynamosNew />
+      <SomosDynamos />
       <Eventos />
       <Testimonios />
       <Team />

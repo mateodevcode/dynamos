@@ -19,3 +19,36 @@ export const objetivosEspecificos = {
   contenido2: `2.  Implementar valores cristianos en las familias a través de programas educativos, asesoramiento pastoral y actividades prácticas que fortalezcan los lazos familiares y promuevan un estilo de vida basado en la fe.`,
   contenido3: `3. Mostrar amor y compasión a través del servicio activo a la población vulnerable, brindando apoyo emocional, material y espiritual a quienes enfrentan dificultades y desafíos en la vida.`,
 };
+
+export const misionImgs = [
+  {
+    src: "https://i.postimg.cc/NF9cHZf8/mision1.jpg",
+    alt: "mision1",
+    width: 600,
+    height: 600,
+  },
+  {
+    src: "https://i.postimg.cc/qRZrgp0M/mision2.jpg",
+    alt: "mision2",
+    width: 600,
+    height: 600,
+  },
+  {
+    src: "https://i.postimg.cc/HWRHgWB6/mision3.jpg",
+    alt: "mision3",
+    width: 600,
+    height: 600,
+  },
+];
+
+export const estilosMision = {
+  backgroundImage: "linear-gradient(rgba(255, 255, 255, 0), rgb(0, 0, 0)),url('https://i.postimg.cc/9f9kmtf0/fondo-pendon.png')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+};
+
+export const estilosVision = {
+  backgroundImage: `linear-gradient(180deg, rgba(1, 1, 1, 0) 58%, rgb(3, 7, 18, 1) 100%),url('https://i.postimg.cc/9f9kmtf0/fondo-pendon.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+};

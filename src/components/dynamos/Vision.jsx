@@ -4,20 +4,39 @@ import Image from "next/image";
 function Vision() {
   return (
     // principal
-    <div className="w-full h-full flex flex-col justify-center bg-imagen-aboutus lg:pt-6 lg:pb-60 sm:pt-0 pb-0">
+    <div
+      className="w-full h-full flex flex-col justify-center bg-imagen-aboutus pb-40 pt-40"
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(1, 1, 1, 0) 58%, rgb(3, 7, 18, 1) 100%),url('https://i.postimg.cc/9f9kmtf0/fondo-pendon.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       {/* vision */}
       <div className="flex flex-col w-full">
         {/* recuadro1 */}
         <div className="flex flex-row w-full items-center">
           <div className="flex w-1/4"></div>
           <div className="flex justify-end w-3/4 lg:mr-10 md:mr-10">
-            <Image className="w-7/12 h-4/6" src="https://i.postimg.cc/bwHjkx85/vision1.jpg" alt="" width={600} height={600} />
+            <Image
+              className="w-7/12 h-4/6"
+              src="https://i.postimg.cc/bwHjkx85/vision1.jpg"
+              alt=""
+              width={600}
+              height={600}
+            />
           </div>
         </div>
         {/* recuadro2 */}
         <div className="flex flex-row items-center">
           <div className="flex justify-start w-3/4 lg:ml-10 md:ml-10">
-            <Image className="w-6/12" src="https://i.postimg.cc/Xvj68rYY/vision2.jpg" alt="" width={600} height={600} />
+            <Image
+              className="w-6/12"
+              src="https://i.postimg.cc/Xvj68rYY/vision2.jpg"
+              alt=""
+              width={600}
+              height={600}
+            />
           </div>
           <div className="flex w-1/4"></div>
         </div>

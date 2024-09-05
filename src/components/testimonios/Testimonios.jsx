@@ -24,15 +24,15 @@ const Testimonios = () => {
     <div
       className={`w-full lg:pt-32 md:pt-32 sm:pt-24 bg-white dark:bg-gray-950`}
     >
-      <div>
+      <div className="flex flex-col justify-start items-center">
         <h2 className="text-center md:text-5xl font-bold select-none sm:text-3xl sm:mb-5 text-black dark:text-white">
           Nuestros Testimonios
         </h2>
-        <div className="w-full flex justify-center items-center text-black dark:text-white">
+        <div className="w-full flex flex-col justify-center items-center text-black dark:text-white">
         {testimonioDynamo.length === 0  && (
             <Spinner
               thickness="4px"
-              speed="0.65s"
+              speed="1.5s"
               emptyColor="gray.200"
               color="red.500"
               size="xl"

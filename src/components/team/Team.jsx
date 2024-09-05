@@ -46,7 +46,7 @@ function Team() {
               {teamDynamo.length === 0 && (
                 <Spinner
                   thickness="4px"
-                  speed="0.65s"
+                  speed="1.5s"
                   emptyColor="gray.200"
                   color="red.500"
                   size="xl"

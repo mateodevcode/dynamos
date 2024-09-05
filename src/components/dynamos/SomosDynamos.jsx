@@ -3,7 +3,7 @@ import ObjGeneral from "@/components/dynamos/ObjGeneral";
 import ObjEspecificos from "@/components/dynamos/ObjEspecificos";
 import Vision from "@/components/dynamos/Vision";
 
-function SomosDynamosNew() {
+function SomosDynamos() {
   return (
     <div className="dark:bg-gray-950 bg-white">
       <Mision />
@@ -14,4 +14,4 @@ function SomosDynamosNew() {
   );
 }
 
-export default SomosDynamosNew;
+export default SomosDynamos;

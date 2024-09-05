@@ -13,7 +13,7 @@ function ObjGeneral() {
             className={`trapecio md:hidden sm:-mr-0 md:-mr-[80px] md:w-[556px] sm:w-[200px] md:h-[150px] sm:h-24 md:-mt-10 md:ml-9 sm:ml-40 md:mb-7 sm:z-30 bg-white dark:bg-gray-900`}
           ></div>
           <div className="md:w-[820px] sm:w-[350px] md:h-72 sm:h-12 md:text-8xl sm:text-3xl md:mb-1 sm:mb-10 font-bold md:ml-20 sm:ml-2 sm:text-center md:mt-24 sm:mt-6">
-            <h1 className="lg:mt-10 md:mt-10 sm:mt-8 text-white">OBJETIVOS</h1>
+            <h1 className="lg:mt-10 md:mt-10 sm:mt-8 text-black dark:text-white">OBJETIVOS</h1>
           </div>
           {/* Hexagono 1 */}
           <div 

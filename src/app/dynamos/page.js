@@ -1,13 +1,12 @@
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
-import SomosDynamosNew from '@/components/dynamos/SomosDynamosNew'
-import React from 'react'
+import SomosDynamos from '@/components/dynamos/SomosDynamos'
 
 const page = () => {
   return (
     <div className='bg-black'>
         <Navbar />
-        <SomosDynamosNew />
+        <SomosDynamos />
         <Footer />
     </div>
   )
