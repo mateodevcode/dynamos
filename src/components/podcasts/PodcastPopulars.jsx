@@ -2,18 +2,33 @@
 
 import { useState, useEffect } from "react";
 import PodcastCard2 from "./PodcastCard2";
-import { datosPodcasts } from "@/data/datos.podcasts";
 
 function PodcastPopulars(podcast) {
+
+  const [Data, setData] = useState([]);
+
+  useEffect(() => {
+    const cargarPopulares = async () => {
+      const res = await fetch("/api/podcast/popular", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      setData(data);
+    };
+    cargarPopulares();
+  }, []);
+  console.log(Data);
+  
   
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === datosPodcasts.length - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) => (prev === Data.length - 1 ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? datosPodcasts.length - 1 : prev - 1));
+    setCurrentSlide((prev) => (prev === 0 ? Data.length - 1 : prev - 1));
   };
 
   const selectSlide = (index) => {
@@ -30,7 +45,7 @@ function PodcastPopulars(podcast) {
     let offset = currentSlide * totalWidth - centeringOffset;
 
     // Ajustes para el inicio y final del carrusel
-    const maxOffset = datosPodcasts.length * totalWidth - containerWidth;
+    const maxOffset = Data.length * totalWidth - containerWidth;
     offset = Math.max(0, Math.min(offset, maxOffset));
 
     return offset;
@@ -57,9 +72,9 @@ function PodcastPopulars(podcast) {
               gap: "8rem",
             }}
           >
-            {datosPodcasts.map((podcast, index) => (
+            {Data.map((podcast, index) => (
               <div
-                key={podcast.id}
+                key={index}
                 className="w-24 flex-shrink-0 flex justify-center items-center"
                 onClick={() => selectSlide(index)}
               >

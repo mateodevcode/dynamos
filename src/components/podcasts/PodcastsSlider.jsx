@@ -2,20 +2,36 @@
 import { useState, useEffect } from "react";
 import PodcastCard from "./PodcastCard";
 import PodcastSection from "./PodcastSection";
-import { datosPodcasts } from "@/data/datos.podcasts";
-
 
 export default function PodcastSlider() {
-  
+  const [Data, setData] = useState([]);
+
+  useEffect(() => {
+    const cargarPodcasts = async () => {
+      const res = await fetch("/api/podcast", {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+      });
+      const data = await res.json();
+      setData(data);
+    };
+    cargarPodcasts();
+  }, []);
+
+  console.log(Data);
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === datosPodcasts.length - 1 ? 0 : prev + 1));
+    setCurrentSlide((prev) =>
+      prev === Data.length - 1 ? 0 : prev + 1
+    );
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? datosPodcasts.length - 1 : prev - 1));
+    setCurrentSlide((prev) =>
+      prev === 0 ? Data.length - 1 : prev - 1
+    );
   };
 
   const selectSlide = (index) => {
@@ -32,7 +48,7 @@ export default function PodcastSlider() {
     let offset = currentSlide * totalWidth - centeringOffset;
 
     // Ajustes para el inicio y final del carrusel
-    const maxOffset = datosPodcasts.length * totalWidth - containerWidth;
+    const maxOffset = Data.length * totalWidth - containerWidth;
     offset = Math.max(0, Math.min(offset, maxOffset));
 
     return offset;
@@ -55,9 +71,9 @@ export default function PodcastSlider() {
               gap: "0.5rem",
             }}
           >
-            {datosPodcasts.map((podcast, index) => (
+            {Data.map((podcast, index) => (
               <div
-                key={podcast.id}
+                key={index}
                 className="w-44 flex-shrink-0 flex justify-center items-center"
                 onClick={() => selectSlide(index)}
               >
