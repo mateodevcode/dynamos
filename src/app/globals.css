@@ -179,3 +179,9 @@ body {
 }
 
 /* Barra de navegación Testimonio */
+.sliderLeft{
+  clip-path: polygon(50% 0, 0 50%, 50% 100%);
+}
+.sliderRight{
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%);
+}
