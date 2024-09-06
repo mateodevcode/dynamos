@@ -12,3 +12,10 @@ export async function GET() {
       return NextResponse.json({ message: error.message }, { status: 500 });
     }
   }
+
+export async function POST(request) {
+    const { name, email, image } = await request.json();
+    await connectMongoDB();
+    await UserGoogle.create({ name, email, image });
+    return NextResponse.json({ message: "Usuario creado" }, { status: 201 });
+  }
