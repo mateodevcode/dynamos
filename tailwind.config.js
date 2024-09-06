@@ -63,10 +63,12 @@ module.exports = {
 	,
 	screens: {
 		'sm': '350px',
-		'md': '680px',
+		'md': '650px',
 		'lg': '1024px',
 		'xl': '1280px',
 		'2xl': '1536px',
+		//Media query personalizado
+		'custom': '900px',
 	}
   },
   plugins: [require("tailwindcss-animate")],
