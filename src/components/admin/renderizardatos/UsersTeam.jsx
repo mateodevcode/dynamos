@@ -1,14 +1,13 @@
 "use client";
+import { Button } from "@/components/ui/button";
+import { Input, Spinner } from "@chakra-ui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BsPersonCircle } from "react-icons/bs";
-import { RiDeleteBin5Line } from "react-icons/ri";
-import { FaRegEdit } from "react-icons/fa";
-import { Center, Divider, Input, Spinner } from "@chakra-ui/react";
-import { Button } from "../ui/button";
 import { BsPersonFillAdd } from "react-icons/bs";
+import { FaRegEdit } from "react-icons/fa";
+import { RiDeleteBin5Line } from "react-icons/ri";
 
-const Panel = () => {
+const UsersTeam = ({ datos }) => {
   const [Data, setData] = useState([]);
   const [User, setUser] = useState({
     nombre: "Jecson Cantillo Álvarez",
@@ -19,7 +18,7 @@ const Panel = () => {
 
   useEffect(() => {
     const cargarDatos = async () => {
-      const res = await fetch("/api/userTeam", {
+      const res = await fetch(`/api/${datos}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -36,18 +35,11 @@ const Panel = () => {
     cargarDatos();
   }, [Id]);
 
-  // console.log(Id);
-
-  // h-[635px]
-
   return (
-    <div className="bg-slate-100 w-full flex flex-row justify-center items-start">
-      {/* <Center height={"100%"} className="" width={"1px"}>
-        <Divider orientation="vertical" />
-      </Center> */}
+    <>
       <div className="w-4/12">
         <h2 className="text-2xl font-bold px-2 py-2 text-black bg-gray-100 flex flex-row justify-between items-center select-none">
-          Usuarios{" "}
+          Team Dynamos
           <BsPersonFillAdd className="text-2xl text-gray-950 hover:text-gray-800 mx-5 select-none cursor-pointer" />
         </h2>
         {Data.map((item, index) => (
@@ -56,7 +48,6 @@ const Panel = () => {
             className="bg-white p-2 m-2 rounded-lg flex flex-row justify-between items-center hover:bg-gray-200 select-none cursor-pointer"
           >
             <div className="flex flex-row justify-start items-center">
-              {/* <BsPersonCircle className="text-2xl mx-2" /> */}
               {Data.length != 0 && (
                 <Image
                   src={item?.img}
@@ -69,9 +60,9 @@ const Panel = () => {
               <p className="font-semibold">{item?.nombre}</p>
             </div>
             <div className="flex flex-row justify-center items-center">
-              <RiDeleteBin5Line className="text-2xl text-blue-900 hover:text-blue-600 mx-2" />
+              <RiDeleteBin5Line className="text-xl text-blue-900 hover:text-blue-600 mx-1" />
               <FaRegEdit
-                className="text-2xl text-green-900 hover:text-green-600 mx-2"
+                className="text-xl text-green-900 hover:text-green-600 mx-1"
                 id={item?._id}
                 onClick={async (e) => {
                   e.preventDefault();
@@ -82,9 +73,7 @@ const Panel = () => {
           </div>
         ))}
       </div>
-      <Center height={"100%"} className="" width={"1px"}>
-        <Divider orientation="vertical" />
-      </Center>
+
       <div className="w-8/12 bg-gray-100 flex flex-col justify-start items-center">
         {User === undefined ? (
           <Spinner
@@ -97,7 +86,6 @@ const Panel = () => {
           />
         ) : (
           <div className="w-400px mt-5 flex flex-col justify-center items-center px-10 py-5">
-            {/* <BsPersonCircle className="text-9xl mx-2" /> */}
             <Image
               src={User?.img}
               alt={"User"}
@@ -122,22 +110,14 @@ const Panel = () => {
                 color: "black",
               }}
             />
-            <Input
-              type="text"
-              defaultValue="Contraseña"
-              className="text-black mt-5"
-              _placeholder={{
-                color: "black",
-              }}
-            />
             <Button className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 mt-5">
               Editar
             </Button>
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 
-export default Panel;
+export default UsersTeam;

@@ -1,42 +1,87 @@
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { IoSettingsSharp } from "react-icons/io5";
 import { VscSettings } from "react-icons/vsc";
-import { Button } from "../ui/button";
 
 const Options = () => {
+  const [Data, setData] = useState([]);
+  const router = useRouter();
+
+
   const estilosItems =
-    "text-white hover:bg-slate-500 px-2 py-1 cursor-pointer flex flex-row justify-between items-center select-none";
+    "text-black hover:bg-gray-200 px-2 py-1 cursor-pointer flex flex-row justify-between items-center select-none cursor-pointer";
+
+  const handleClick = async (e) => {
+    const res = await fetch(`/api/${e}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await res.json();
+    setData(data);
+    router.push(`/admin/${e}`);
+  };
+
+  
 
   return (
-    <div className="flex flex-col justify-between w-[200px] bg-slate-400 h-[635px]">
+    <div className="flex flex-col justify-between w-[200px] h-[600px] sticky top-14">
       <section className="">
         <ul className="">
-          <li className={estilosItems}>
+          <li
+            className={estilosItems}
+            id="evento"
+            onClick={(e) => {
+              handleClick(e.target.id);
+            }}
+          >
             Eventos
             <VscSettings />
           </li>
-          <li className={estilosItems}>
+          <li
+            className={estilosItems}
+            id="userTeam"
+            onClick={(e) => {
+              handleClick(e.target.id);
+            }}
+          >
             Team Dynamos
             <VscSettings />
           </li>
-          <li className={estilosItems}>
+          <li
+            className={estilosItems}
+            id="testimonio"
+            onClick={(e) => {
+              handleClick(e.target.id);
+            }}
+          >
             Testimonios
             <VscSettings />
           </li>
-          <li className={estilosItems}>
+          <li
+            className={estilosItems}
+            id="usuario"
+            onClick={(e) => {
+              handleClick(e.target.id);
+            }}
+          >
             Usuarios
             <VscSettings />
           </li>
-          <li className={estilosItems}>
+          <li
+            className={estilosItems}
+            id="config"
+            onClick={(e) => {
+              handleClick(e.target.id);
+            }}
+          >
             Configuración
             <IoSettingsSharp />
           </li>
         </ul>
       </section>
-      <div>
-        <Button className="bg-gray-500 hover:bg-gray-400 text-white px-2 py-1 mx-4 my-5">
-          Cerrar Sesión
-        </Button>
-      </div>
     </div>
   );
 };
