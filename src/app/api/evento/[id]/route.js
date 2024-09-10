@@ -9,15 +9,7 @@ export async function GET(request, { params }) {
     if (!evento) {
       return NextResponse.json({ message: "Evento no encontrado" }, { status: 404 });
     }
-
-    const formattedEvento = {
-      ...evento.toObject(),
-      fecha: new Date(evento.fecha).toLocaleDateString('es-ES', { year: 'numeric',  day: '2-digit',  month: '2-digit'}),
-      createdAt: new Date(evento.createdAt).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }),
-      updatedAt: new Date(evento.updatedAt).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
-    };
-
-    return NextResponse.json(formattedEvento);
+    return NextResponse.json(evento);
   } catch (error) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }

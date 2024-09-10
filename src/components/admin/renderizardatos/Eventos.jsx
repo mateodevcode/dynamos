@@ -134,7 +134,7 @@ const Eventos = ({ datos }) => {
           location.reload();
         }, 700);
       } else {
-        alert("Ocurrió un error al crear el usuario");
+        alert("Ocurrió un error al crear el evento");
       }
     } catch (error) {}
   };
@@ -241,7 +241,7 @@ const Eventos = ({ datos }) => {
   return (
     <>
       <div className="lg:w-5/12 md:w-5/12 sm:w-full">
-        <h2 className="text-2xl font-bold px-2 py-2 text-black bg-gray-100 flex flex-row justify-between items-center select-none">
+        <h2 className="lg:text-2xl md:text-2xl sm:text-xl font-bold px-2 py-2 text-black bg-gray-100 flex flex-row justify-between items-center select-none">
           Eventos
           <Tooltip
             label={`Crear evento`}
@@ -250,7 +250,7 @@ const Eventos = ({ datos }) => {
           >
             <span>
               <MdOutlineAddToPhotos
-                className="text-2xl text-gray-950 hover:text-gray-600 mx-5 select-none cursor-pointer"
+                className="lg:text-2xl md:text-2xl sm:text-base text-gray-950 hover:text-gray-600 lg:mx-5 md:mx-5 sm:mx-2 select-none cursor-pointer"
                 onClick={() => setCreateData(!createData)}
               />
             </span>

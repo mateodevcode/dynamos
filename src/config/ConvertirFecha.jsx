@@ -1,18 +1,28 @@
-import { useEffect, useState } from "react";
 
 const ConvertirFecha = (evento) => {
-  const [fecha, setFecha] = useState("");
+  const meses = [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre",
+  ];
 
-  useEffect(() => {
-    const [dia, mes, año] = evento.fecha.split("/").map(Number);
-    const fecha = new Date(año, mes - 1, dia);
-    const opciones = { year: "numeric", month: "long", day: "numeric" };
-    const fechaFormateada = fecha.toLocaleDateString("es-ES", opciones);
-    const partesFecha = fechaFormateada.split(" ");
-    const fechaFinal = `${partesFecha[2]} ${partesFecha[0]} ${partesFecha[4]}`;
-    setFecha(fechaFinal);
-  }, [evento]);
-  return fecha;
+  // Dividir la fecha en partes
+  const [dia, mes,  año] = evento.split("/");
+
+  // Convertir el mes numérico en nombre
+  const nombreMes = meses[parseInt(mes, 10) - 1]; // Restamos 1 porque los índices del array empiezan en 0
+
+  // Formar la nueva cadena con el formato "día nombre_mes año"
+  return `${dia} ${nombreMes} ${año}`;
 };
 
 export default ConvertirFecha;

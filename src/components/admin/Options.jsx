@@ -12,7 +12,7 @@ const Options = () => {
   const [mostrarMenu, setMostrarMenu] = useState(true);
 
   const estilosItems =
-    "text-black hover:bg-gray-200 px-2 py-1 cursor-pointer flex flex-row justify-between items-center select-none cursor-pointer";
+    "text-black lg:text-base md:text-base sm:text-xs  hover:bg-gray-200 px-2 py-1 cursor-pointer flex flex-row justify-between items-center select-none cursor-pointer";
 
   const handleClick = async (e) => {
     const res = await fetch(`/api/${e}`, {
@@ -32,16 +32,20 @@ const Options = () => {
         mostrarMenu ? "w-[200px]" : "w-[30px]"
       }`}
     >
-      <section className="my-2">
+      <section className="">
         <div
-          className={`w-full flex flex-row items-end ${
+          className={`w-full flex flex-row items-end my-1 ${
             mostrarMenu ? "justify-end" : "justify-center"
           }`}
         >
-          <Tooltip label={`${mostrarMenu ? "Cerrar menú" : "Abrir menú"}`} aria-label="A tooltip" className="dark:bg-blue-900">
+          <Tooltip
+            label={`${mostrarMenu ? "Cerrar menú" : "Abrir menú"}`}
+            aria-label="A tooltip"
+            className="dark:bg-blue-900"
+          >
             <span>
               <MdOutlineMenuOpen
-                className={`cursor-pointer text-xl hover:text-blue-700 text-blue-900 ${
+                className={`cursor-pointer lg:text-xl md:text-xl sm:text-sm hover:text-blue-700 text-blue-900 ${
                   mostrarMenu ? "mx-2" : ""
                 }`}
                 onClick={() => {

@@ -21,7 +21,7 @@ const CardEvento = ({eventos}) => {
             />
             <div className="flex flex-col justify-center items-start sm:text-xs md:text-base lg:text-base text-black dark:text-white">
               <div className="flex mb-3 font-semibold">
-                <FechaFinal evento={evento} />
+                <FechaFinal evento={evento.fecha} />
                 <Image
                   src={evento.imgAutor}
                   alt={`Imagen de ${evento.autor}`}
