@@ -5,8 +5,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import ModoDark from "../mododark/ModoDark";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { getSession } from "next-auth/react";
 
 const Register = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const router = useRouter();
+  error && setTimeout(() => setError(""), 3000);
+  const session = getSession();
+
+  const handleSubmit = async () => {
+    signIn("google");
+
+    // setName(session.user.name);
+    // setEmail(session.user.email);
+    // const image = session.user.image;
+
+    // const res = await fetch("api/userGoogle", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ name, email, image }),
+    // })
+    // const data = await res.json();
+    // if (data.error) {
+    //   setError(data.error);
+    //   return;
+    // }
+    
+  };
+
+  console.log(session);
+
+
   return (
     <div className="h-screen flex flex-row justify-center items-center dark:bg-gray-950 bg-gray-100">
       <div className="w-[800px] h-[500px] dark:bg-gray-900 bg-white rounded-md shadow-md shadow-black dark:shadow-white/20 flex lg:flex-row-reverse md:flex-row sm:flex-col justify-between items-center">
@@ -29,7 +65,7 @@ const Register = () => {
           </div>
           <div
             className="px-4 py-2 bg-green-600 hover:bg-green-400 rounded-3xl font-semibold my-5 text-white cursor-pointer select-none"
-            onClick={() => signIn("google")}
+            onClick={handleSubmit}
           >
             Registrate
           </div>

@@ -23,7 +23,7 @@ const Testimonios = ({ datos }) => {
   }, []);
 
   return (
-    <div className="w-4/12">
+    <div className="w-5/12">
       <h2 className="text-2xl font-bold px-2 py-2 text-black bg-gray-100 flex flex-row justify-between items-center select-none">
         Testimonios
         <BsPersonFillAdd className="text-2xl text-gray-950 hover:text-gray-800 mx-5 select-none cursor-pointer" />
@@ -46,15 +46,28 @@ const Testimonios = ({ datos }) => {
             <p className="font-semibold">{item?.nombre}</p>
           </div>
           <div className="flex flex-row justify-center items-center">
-            <RiDeleteBin5Line className="text-xl text-blue-900 hover:text-blue-600 mx-1" />
-            <FaRegEdit
-              className="text-xl text-green-900 hover:text-green-600 mx-1"
-              id={item?._id}
-              onClick={async (e) => {
-                e.preventDefault();
-                setId(e.target.id);
-              }}
-            />
+          <div
+                id={item?._id}
+                onClick={async (e) => {
+                  e.preventDefault();
+                  setId(e.target.id);
+                }}
+                className="bg-red-600 hover:bg-red-500 text-white mx-1 text-xs py-1 px-2 rounded-md flex flex-row justify-center items-center"
+              >
+                Eliminar
+                {/* <RiDeleteBin5Line className="text-xs mx-1" /> */}
+              </div>
+              <div
+                id={item?._id}
+                onClick={async (e) => {
+                  e.preventDefault();
+                  setId(e.target.id);
+                }}
+                className="bg-blue-600 hover:bg-blue-500 text-white mx-1 text-xs py-1 px-2 rounded-md flex flex-row justify-center items-center"
+              >
+                Editar
+                {/* <FaRegEdit className="text-xs mx-1" /> */}
+              </div>
           </div>
         </div>
       ))}

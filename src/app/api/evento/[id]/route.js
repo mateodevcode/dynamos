@@ -28,7 +28,7 @@ export async function PUT(request, { params }) {
     await connectMongoDB();
     try {
       const data = await request.json();
-      const updatedEvento = await Evento.findByIdAndUpdate(params.id, data, { new: true, runValidators: true });
+      const updatedEvento = await Evento.findByIdAndUpdate(params.id, data);
       if (!updatedEvento) {
         return NextResponse.json({ message: "Evento no encontrado" }, { status: 404 });
       }

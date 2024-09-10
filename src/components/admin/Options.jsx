@@ -3,11 +3,13 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { IoSettingsSharp } from "react-icons/io5";
 import { VscSettings } from "react-icons/vsc";
+import { MdOutlineMenuOpen } from "react-icons/md";
+import { Tooltip } from "@chakra-ui/react";
 
 const Options = () => {
   const [Data, setData] = useState([]);
   const router = useRouter();
-
+  const [mostrarMenu, setMostrarMenu] = useState(true);
 
   const estilosItems =
     "text-black hover:bg-gray-200 px-2 py-1 cursor-pointer flex flex-row justify-between items-center select-none cursor-pointer";
@@ -24,12 +26,32 @@ const Options = () => {
     router.push(`/admin/${e}`);
   };
 
-  
-
   return (
-    <div className="flex flex-col justify-between w-[200px] h-[600px] sticky top-14">
-      <section className="">
-        <ul className="">
+    <div
+      className={`flex flex-col justify-between w-[200px] h-[600px] sticky top-14 ${
+        mostrarMenu ? "w-[200px]" : "w-[30px]"
+      }`}
+    >
+      <section className="my-2">
+        <div
+          className={`w-full flex flex-row items-end ${
+            mostrarMenu ? "justify-end" : "justify-center"
+          }`}
+        >
+          <Tooltip label={`${mostrarMenu ? "Cerrar menú" : "Abrir menú"}`} aria-label="A tooltip" className="dark:bg-blue-900">
+            <span>
+              <MdOutlineMenuOpen
+                className={`cursor-pointer text-xl hover:text-blue-700 text-blue-900 ${
+                  mostrarMenu ? "mx-2" : ""
+                }`}
+                onClick={() => {
+                  setMostrarMenu(!mostrarMenu);
+                }}
+              />
+            </span>
+          </Tooltip>
+        </div>
+        <ul className={`${mostrarMenu ? "" : "hidden"}`}>
           <li
             className={estilosItems}
             id="evento"
@@ -38,7 +60,7 @@ const Options = () => {
             }}
           >
             Eventos
-            <VscSettings />
+            <VscSettings className="text-blue-900" />
           </li>
           <li
             className={estilosItems}
@@ -48,7 +70,7 @@ const Options = () => {
             }}
           >
             Team Dynamos
-            <VscSettings />
+            <VscSettings className="text-blue-900" />
           </li>
           <li
             className={estilosItems}
@@ -58,17 +80,17 @@ const Options = () => {
             }}
           >
             Testimonios
-            <VscSettings />
+            <VscSettings className="text-blue-900" />
           </li>
           <li
             className={estilosItems}
-            id="usuario"
+            id="userGoogle"
             onClick={(e) => {
               handleClick(e.target.id);
             }}
           >
             Usuarios
-            <VscSettings />
+            <VscSettings className="text-blue-900" />
           </li>
           <li
             className={estilosItems}
@@ -78,7 +100,7 @@ const Options = () => {
             }}
           >
             Configuración
-            <IoSettingsSharp />
+            <IoSettingsSharp className="text-blue-900" />
           </li>
         </ul>
       </section>

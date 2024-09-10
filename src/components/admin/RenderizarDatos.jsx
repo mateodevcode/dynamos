@@ -1,6 +1,7 @@
 import Eventos from "./renderizardatos/Eventos";
 import Testimonios from "./renderizardatos/Testimonios";
 import UsersTeam from "./renderizardatos/UsersTeam";
+import Usuarios from "./renderizardatos/Usuarios";
 
 const RenderizarDatos = ({ datos }) => {
   switch (datos) {
@@ -18,9 +19,7 @@ const RenderizarDatos = ({ datos }) => {
       );
     default:
       return (
-        <div>
-          <h1>Usuarios</h1>
-        </div>
+        <Usuarios datos={datos} />
       );
   }
 };
