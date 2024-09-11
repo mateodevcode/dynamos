@@ -21,10 +21,14 @@ const Options = () => {
         "Content-Type": "application/json",
       },
     });
+    console.log(e);
+    
     const data = await res.json();
     setData(data);
     router.push(`/admin/${e}`);
   };
+
+  
 
   return (
     <div

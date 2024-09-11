@@ -12,7 +12,7 @@ const userGoogleSchema = new Schema(
     },
     password: {
       type: String,
-      default: "",
+      required: true,
     },
     image: {
       type: String,
