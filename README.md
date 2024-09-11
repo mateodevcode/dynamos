@@ -1,13 +1,13 @@
 # Dynamos
 
 ## Deploy on Vercel
-Para visualizar la pagina desplegada en GitHub Pages puedes dar click en el siguiente enlace. [Ir a la web](https://iglesia-dynamos.vercel.app)
+Para visualizar la pagina desplegada en GitHub Pages puedes dar click en el siguiente enlace. [Ir a la web](https://dynamos-rho.vercel.app)
 
 **✨ Bienvenidos a Dynamos: Un Movimiento de Fe y Comunidad ✨** ¡Hola! 😄 Te invito a descubrir Dynamos, una iglesia moderna y vibrante que va más allá de las paredes físicas: somos un movimiento de fe y comunidad que conecta a personas de todo el mundo. 🌍💒
 
 Nuestra web está cuidadosamente diseñada y desplegada en Vercel para ofrecerte una experiencia espiritual fluida y accesible, utilizando tecnologías avanzadas como **Next.js**, **Chakra UI**, **Tailwind CSS**, y **MongoDB** para la base de datos. 🙏🚀
 
-[![image](https://github.com/user-attachments/assets/4461cb08-a521-4b8a-ae5e-3caa8b178cdf)](https://iglesia-dynamos.vercel.app)
+[![image](https://github.com/user-attachments/assets/4461cb08-a521-4b8a-ae5e-3caa8b178cdf)](https://dynamos-rho.vercel.app)
 
 
 ## 🛠️ Tecnologías Utilizadas:
@@ -31,6 +31,6 @@ Nuestra web está cuidadosamente diseñada y desplegada en Vercel para ofrecerte
 
 ## 🌐 Visita Dynamos y sé parte de este increíble movimiento de fe. Ya sea que busques una comunidad, apoyo espiritual o quieras explorar más sobre nuestra iglesia, este es el lugar para ti. 🙌✨
 
-👉 **[Ir a la web](https://iglesia-dynamos.vercel.app)**
+👉 **[Ir a la web](https://dynamos-rho.vercel.app)**
 
 ¡Espero que te sientas inspirado y conectado a través de Dynamos, tanto como nosotros lo estamos creando esta comunidad! 💒🌟
