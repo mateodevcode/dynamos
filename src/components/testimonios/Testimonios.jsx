@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import CardTestimonio from "./CardTestimonio";
 import SpinnerLoad from "../loading/SpinnerLoad";
-import Skeleton from "./Skeleton";
 
 const Testimonios = () => {
   const [testimonioDynamo, setTestimonioDynamo] = useState([]);
@@ -31,7 +30,7 @@ const Testimonios = () => {
         </h2>
         <div className="w-full flex flex-col justify-center items-center text-black dark:text-white">
         {testimonioDynamo.length === 0  && (
-            <Skeleton />
+            <SpinnerLoad size={"4px"} />
           )}
           {testimonioDynamo && (
             <CardTestimonio testimonioDynamo={testimonioDynamo} />
