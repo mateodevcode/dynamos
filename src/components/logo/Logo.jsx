@@ -4,7 +4,7 @@ import { logo } from "@/data/navbar";
 
 const Logo = () => {
   return (
-    <Link href={"/"} className="w-8 h-8">
+    <Link href={"/"}>
       <Image
         className={logo.className}
         src={logo.src}

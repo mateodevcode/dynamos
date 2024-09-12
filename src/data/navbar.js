@@ -1,5 +1,5 @@
 export const logo = {
-  className: "w-8 h-8",
+  className: "w-6 h-6",
   src: "https://i.postimg.cc/DzZ2xz7n/logo-dynamo.png",
   alt: "Logo de Dynamo",
   width: 100,

@@ -20,7 +20,7 @@ const CardEvento = ({eventos}) => {
               height={400}
             />
             <div className="flex flex-col justify-center items-start sm:text-xs md:text-base lg:text-base text-black dark:text-white">
-              <div className="flex mb-3 font-semibold">
+              <div className="w-full flex flex-row justify-between items-center mb-3 font-semibold">
                 <FechaFinal evento={evento.fecha} />
                 <Image
                   src={evento.imgAutor}

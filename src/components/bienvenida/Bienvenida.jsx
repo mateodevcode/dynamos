@@ -11,7 +11,7 @@ const Bienvenida = () => {
           <Image
             src={logo.src}
             alt={logo.alt}
-            className="lg:w-28 md:w-28 sm:w-8"
+            className="lg:w-24 md:w-28 sm:w-8"
             width={600}
             height={600}
           />

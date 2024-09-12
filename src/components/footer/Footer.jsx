@@ -12,7 +12,7 @@ function Footer() {
         <Image
           src={logo.src}
           alt={logo.alt}
-          className="md:w-24 sm:w-16 md:mb-0 sm:mb-5"
+          className="lg:w-24 md:w-28 sm:w-8 md:mb-0 sm:mb-5"
           width={400}
           height={400}
         />
