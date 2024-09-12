@@ -1,19 +1,12 @@
 "use client";
-import { Spinner } from "@chakra-ui/react";
-import AddUserTeam from "@/components/team/AddUserTeam";
 import CardTeam from "./CardTeam";
 import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
 import HeaderTeam from "./HeaderTeam";
-import IsAdministrador from "@/config/IsAdministrador";
-
+import SpinnerLoad from "../loading/SpinnerLoad";
+import Skeleton from "../testimonios/Skeleton";
 
 function Team() {
   const [teamDynamo, setTeamDynamo] = useState([]);
-  const { data: session } = useSession();
-
-  IsAdministrador(session);
-  const isAdmin = IsAdministrador(session);
 
   useEffect(() => {
     const cargarUserTeam = async () => {
@@ -40,18 +33,10 @@ function Team() {
                 <CardTeam teamDynamo={teamDynamo} />
               </div>
               {teamDynamo.length === 0 && (
-                <Spinner
-                  thickness="4px"
-                  speed="1.5s"
-                  emptyColor="gray.200"
-                  color="red.500"
-                  size="xl"
-                  my="20"
-                />
+                <SpinnerLoad size="4px" />
               )}
             </div>
           </div>
-          {isAdmin && <AddUserTeam />}
         </div>
       )}
     </>

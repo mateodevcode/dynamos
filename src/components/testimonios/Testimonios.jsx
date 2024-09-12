@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import CardTestimonio from "./CardTestimonio";
-import { Spinner } from "@chakra-ui/react";
+import SpinnerLoad from "../loading/SpinnerLoad";
+import Skeleton from "./Skeleton";
 
 const Testimonios = () => {
   const [testimonioDynamo, setTestimonioDynamo] = useState([]);
@@ -30,14 +31,7 @@ const Testimonios = () => {
         </h2>
         <div className="w-full flex flex-col justify-center items-center text-black dark:text-white">
         {testimonioDynamo.length === 0  && (
-            <Spinner
-              thickness="4px"
-              speed="1.5s"
-              emptyColor="gray.200"
-              color="red.500"
-              size="xl"
-              my="20"
-            />
+            <Skeleton />
           )}
           {testimonioDynamo && (
             <CardTestimonio testimonioDynamo={testimonioDynamo} />

@@ -3,31 +3,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import EnlacesIconTeam from "./EnlacesIconTeam";
 import Link from "next/link";
-import { Spinner } from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
-import IsAdministrador from "@/config/IsAdministrador";
-
+import SpinnerLoad from "../loading/SpinnerLoad";
 
 const CardTeamOne = () => {
   const [team, setTeam] = useState(null);
   const Params = useParams();
-  const router = useRouter();
-  const { data: session } = useSession();
-
-  IsAdministrador(session);
-  const isAdmin = IsAdministrador(session);
-
-
-  const handleDelete = async () => {
-    if (window.confirm("¿Estás seguro de eliminar este usuario?")) {
-      const res = await fetch(`/api/userTeam/${Params.id}`, {
-        method: "DELETE",
-      });
-      router.push("/team");
-      router.refresh("/team");
-    }
-  };
 
   useEffect(() => {
     const cargarUserTeam = async () => {
@@ -73,33 +53,10 @@ const CardTeamOne = () => {
           );
         })
       ) : (
-        <Spinner
-          thickness="4px"
-          speed="0.65s"
-          emptyColor="gray.200"
-          color="red.500"
-          size="xl"
-        />
+        <SpinnerLoad size="4px" />
       )}
       {team && (
         <div>
-          {isAdmin && (
-            <button
-              type="button"
-              onClick={() => handleDelete()}
-              className="mt-4 bg-red-600 hover:bg-red-400 text-white rounded-lg px-3 py-2 select-none font-semibold dark mx-2"
-            >
-              Eliminar
-            </button>
-          )}
-          {isAdmin && (
-            <button
-              type="button"
-              className="mt-4 bg-green-600 hover:bg-green-400 text-white rounded-lg px-3 py-2 select-none font-semibold dark mx-2"
-            >
-              Editar
-            </button>
-          )}
           <Link href="/team">
             <button className="mt-4 bg-blue-600 hover:bg-blue-400 text-white rounded-lg px-3 py-2 select-none font-semibold dark mx-2">
               Volver

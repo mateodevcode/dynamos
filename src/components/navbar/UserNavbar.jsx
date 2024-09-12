@@ -27,7 +27,8 @@ const UserNavbar = () => {
   }, [session]);
 
   useEffect(() => {
-    if (session?.user?.email === "bysteffler@gmail.com") {
+    const adminEmail = process.env.NEXT_AUTH_ADMIN_EMAIL;
+    if (session?.user?.email === adminEmail) {
       setAdmin(true);
     } else {
       setAdmin(false);

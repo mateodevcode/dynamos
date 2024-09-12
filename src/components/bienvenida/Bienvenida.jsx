@@ -7,11 +7,11 @@ const Bienvenida = () => {
       className={`w-full flex flex-col justify-start items-center dark:bg-gray-950 lg:h-[750px] md:h-screen sm:h-72 md:mt-0 sm:pt-12 sm:pb-20`}
     >
       <div className="absolute lg:top-[380px] md:top-[270px] sm:top-[125px] lg:left-32 md:left-10 sm:left-6 flex flex-row justify-center items-center select-none">
-        <div className="bg-white/50 dark:bg-gray-900/50 lg:p-10 md:p-10 sm:p-4 rounded-full">
+        <div className="bg-white/50 dark:bg-gray-900/50 lg:p-12 md:p-10 sm:p-4 rounded-full">
           <Image
             src={logo.src}
             alt={logo.alt}
-            className="lg:w-32 md:w-32 sm:w-10"
+            className="lg:w-28 md:w-28 sm:w-8"
             width={600}
             height={600}
           />

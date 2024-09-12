@@ -1,7 +1,7 @@
 "use client";
 import CardEvento from "@/components/eventos/CardEvento";
-import { Spinner } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import SpinnerLoad from "../loading/SpinnerLoad";
 
 function Eventos() {
   const [eventos, setEventos] = useState([]);
@@ -37,14 +37,7 @@ function Eventos() {
           </p>
         </div>
         {eventos.length === 0 && (
-          <Spinner
-            thickness="4px"
-            speed="1.5s"
-            emptyColor="gray.200"
-            color="red.500"
-            size="xl"
-            my="20"
-          />
+          <SpinnerLoad size="4px" />
         )}
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 lg:w-full md:w-10/12 sm:mb-10 md:mb-40">
           <CardEvento eventos={eventos} />

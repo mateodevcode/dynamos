@@ -2,8 +2,8 @@ export const logo = {
   className: "w-8 h-8",
   src: "https://i.postimg.cc/DzZ2xz7n/logo-dynamo.png",
   alt: "Logo de Dynamo",
-  width: 150,
-  height: 150,
+  width: 100,
+  height: 100,
 };
 
 export const enlacesNavbar = [
@@ -22,6 +22,10 @@ export const enlacesNavbar = [
   {
     nombre: "Testimonios",
     ruta: "/testimonios",
+  },
+  {
+    nombre: "Podcasts",
+    ruta: "/podcasts",
   },
   {
     nombre: "Unete + TEAM",
