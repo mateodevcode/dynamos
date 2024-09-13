@@ -4,7 +4,6 @@ import {
   AlertIcon,
   AlertTitle,
 } from "@chakra-ui/react";
-import React from "react";
 
 const EstadoActualizado = ({ estado }) => {
   return (

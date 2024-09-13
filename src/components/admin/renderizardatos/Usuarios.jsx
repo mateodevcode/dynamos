@@ -206,26 +206,24 @@ const Eventos = ({ datos }) => {
     }
   };
 
-    useEffect(() => {
-      const comprobarCorreo = async () => {
-        const res = await fetch(`/api/userGoogle`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const data = await res.json();
-        const correo = data.find((item) => item.email === email);
-        if (correo) {
-          setComprobarCorreo(true);
-        } else {
-          setComprobarCorreo(false);
-        }
-      };
-      comprobarCorreo();
-    }, [email]);
-
-  
+  useEffect(() => {
+    const comprobarCorreo = async () => {
+      const res = await fetch(`/api/userGoogle`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      const correo = data.find((item) => item.email === email);
+      if (correo) {
+        setComprobarCorreo(true);
+      } else {
+        setComprobarCorreo(false);
+      }
+    };
+    comprobarCorreo();
+  }, [email]);
 
   return (
     <>
@@ -371,23 +369,23 @@ const Eventos = ({ datos }) => {
                 Contraseña
               </Label>
               <div className="w-full flex flex-row justify-center items-center">
-              <Input
-                type={tipoContrasena}
-                name="password"
-                placeholder="Ingresa la contraseña"
-                defaultValue={formData.password}
-                className="text-gray-500"
-                onChange={handleChange}
-              />
-                                <div
-                    className="cursor-pointer mx-2"
-                    onClick={() => {
-                      setVerContrasena(!verContrasena);
-                      setTipoContrasena(verContrasena ? "password" : "text");
-                    }}
-                  >
-                    {verContrasena ? <FiEye /> : <FiEyeOff />}
-                  </div>
+                <Input
+                  type={tipoContrasena}
+                  name="password"
+                  placeholder="Ingresa la contraseña"
+                  defaultValue={formData.password}
+                  className="text-gray-500"
+                  onChange={handleChange}
+                />
+                <div
+                  className="cursor-pointer mx-2"
+                  onClick={() => {
+                    setVerContrasena(!verContrasena);
+                    setTipoContrasena(verContrasena ? "password" : "text");
+                  }}
+                >
+                  {verContrasena ? <FiEye /> : <FiEyeOff />}
+                </div>
               </div>
               <Label className="font-bold mx-2 my-1 text-gray-700 mt-2">
                 Ocupación
@@ -434,18 +432,18 @@ const Eventos = ({ datos }) => {
                     Email
                   </InputLeftAddon>
                   <Input
-                    type="text"
+                    type="email"
                     placeholder="Ingresa el email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </InputGroup>
                 {comprobarCorreo && (
-                <Alert status="error">
-                <AlertIcon />
-                <AlertTitle>El correo ya esta registrado</AlertTitle>
-              </Alert>
-              )}
+                  <Alert status="error">
+                    <AlertIcon />
+                    <AlertTitle>El correo ya esta registrado</AlertTitle>
+                  </Alert>
+                )}
                 <Text className="font-semibold">Sube una foto</Text>
                 <InputGroup>
                   <InputLeftAddon className="font-semibold dark:bg-blue-900 dark:text-white text-black">

@@ -4,8 +4,12 @@ import { enlacesIconFooter } from "@/data/enlaces.icon.footer";
 import Link from "next/link";
 import Image from "next/image";
 import { enlacesNavbar, logo } from "@/data/navbar";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 function Footer() {
+  const { data: session, status } = useSession();
+
   return (
     <div className="flex flex-col justify-center items-center pt-20 pb-10 bg-white dark:bg-gray-950 text-black dark:text-white w-full">
       <Link href="/">
@@ -17,9 +21,9 @@ function Footer() {
           height={400}
         />
       </Link>
-      
-        {/* <Categoria /> */}
-      
+
+      {/* <Categoria /> */}
+
       <div className="md:flex flex-row sm:hidden md:my-4 pt-10">
         {enlacesNavbar.map((enlace, i) => {
           return (
@@ -36,8 +40,21 @@ function Footer() {
         const redes = enlace.redes;
         return <EnlacesIconsFooter key={i} enlace={redes} />;
       })}
-      <div className="select-none md:w-full md:text-base sm:text-xs text-center">
+      <div className="select-none w-full lg:text-base sm:text-xs text-center">
         © 2023 Movimiento Dynamos. Todos los derechos reservados.
+      </div>
+      <div className="w-full flex flex-row justify-center items-center mt-5 text-sm text-gray-600">
+        <p className="mx-5">
+          {status == "authenticated" && session?.user?.email}
+        </p>
+        <p
+          className="mx-5 cursor-pointer select-none"
+          onClick={() => {
+            signOut();
+          }}
+        >
+          Cerrar Sesión
+        </p>
       </div>
     </div>
   );

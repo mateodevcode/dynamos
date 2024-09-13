@@ -1,5 +1,4 @@
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+"use client";
 import Logo from "../logo/Logo";
 import Enlace from "./Enlace";
 import { enlacesNavbar } from "@/data/navbar";
@@ -7,9 +6,22 @@ import ModoDark from "../mododark/ModoDark";
 import UserNavbar from "./UserNavbar";
 import MenuHamburger from "./MenuHamburger";
 import Login from "./Login";
+import { useSession } from "next-auth/react";
+import { useEffect, useState } from "react";
+import EnlaceAdmin from "./EnlaceAdmin";
 
-async function Navbar() {
-  const session = await getServerSession(authOptions);
+function Navbar() {
+  const [admin, setAdmin] = useState(false);
+  const { data: session, status } = useSession();
+  const email = String(session?.user?.email);
+
+  useEffect(() => {
+    if (email.includes(process.env.NEXT_PUBLIC_ADMIN_EMAIL)) {
+      setAdmin(true);
+    } else {
+      setAdmin(false);
+    }
+  }, [session]);
 
   return (
     <div className="w-full flex flex-row justify-between items-center lg:justify-between md:justify-between sm:justify-between border-gray-200 dark:border-gray-500 border-b-2 z-10 fixed h-12 text-black dark:text-white bg-white dark:bg-gray-950">
@@ -28,6 +40,7 @@ async function Navbar() {
         <UserNavbar />
         <ModoDark />
         <MenuHamburger />
+        {admin && <EnlaceAdmin />}
       </div>
     </div>
   );

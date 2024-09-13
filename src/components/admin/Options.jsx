@@ -1,10 +1,12 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { IoSettingsSharp } from "react-icons/io5";
+import { useState } from "react";
+import { IoArrowUndo, IoSettingsSharp } from "react-icons/io5";
 import { VscSettings } from "react-icons/vsc";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { Tooltip } from "@chakra-ui/react";
+import Link from "next/link";
+import Logo from "../logo/Logo";
 
 const Options = () => {
   const [Data, setData] = useState([]);
@@ -21,14 +23,11 @@ const Options = () => {
         "Content-Type": "application/json",
       },
     });
-    console.log(e);
-    
+
     const data = await res.json();
     setData(data);
     router.push(`/admin/${e}`);
   };
-
-  
 
   return (
     <div
@@ -60,6 +59,9 @@ const Options = () => {
           </Tooltip>
         </div>
         <ul className={`${mostrarMenu ? "" : "hidden"}`}>
+          <Link href="/admin" className={estilosItems} id="panel">
+            Dashboard
+          </Link>
           <li
             className={estilosItems}
             id="evento"
@@ -110,6 +112,12 @@ const Options = () => {
             Configuración
             <IoSettingsSharp className="text-blue-900" />
           </li>
+          <Link href="/"
+            className={estilosItems}
+          >
+            Volver a dynamos
+            <IoArrowUndo className="text-blue-900" />
+          </Link>
         </ul>
       </section>
     </div>

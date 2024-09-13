@@ -1,140 +1,32 @@
 "use client";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { BsPersonCircle } from "react-icons/bs";
-import { RiDeleteBin5Line } from "react-icons/ri";
+import Link from "next/link";
 import { FaRegEdit } from "react-icons/fa";
-import { Center, Divider, Input, Spinner } from "@chakra-ui/react";
-import { Button } from "../ui/button";
-import { BsPersonFillAdd } from "react-icons/bs";
+import { MdAddToPhotos } from "react-icons/md";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import { enlacesPanel } from "@/data/panel";
 
 const Panel = () => {
-  const [Data, setData] = useState([]);
-  const [User, setUser] = useState({
-    nombre: "Jecson Cantillo Álvarez",
-    cargo: "Pastor Fundador",
-    img: "https://i.postimg.cc/tThWnRyc/jecson-cantillo.jpg",
-  });
-  const [Id, setId] = useState("669bf7d95053e29a5990cf2b");
-
-  useEffect(() => {
-    const cargarDatos = async () => {
-      const res = await fetch("/api/userTeam", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await res.json();
-      setData(data);
-
-      const key = "_id";
-      const value = Id;
-      const user = data.find((item) => item[key] === value);
-      setUser(user);
-    };
-    cargarDatos();
-  }, [Id]);
-
-  // console.log(Id);
-
-  // h-[635px]
+  const estilos =
+    "bg-blue-600 lg:w-72 md:w-72 sm:w-40 lg:h-40 md:h-40 sm:h-32 flex flex-col justify-center items-center lg:text-4xl md:text-4xl sm:text-2xl font-bold rounded-md select-none hover:bg-blue-500 cursor-pointer text-gray-100";
 
   return (
-    <div className="bg-slate-100 w-full flex flex-row justify-center items-start">
-      {/* <Center height={"100%"} className="" width={"1px"}>
-        <Divider orientation="vertical" />
-      </Center> */}
-      <div className="w-4/12">
-        <h2 className="text-2xl font-bold px-2 py-2 text-black bg-gray-100 flex flex-row justify-between items-center select-none">
-          Usuarios{" "}
-          <BsPersonFillAdd className="text-2xl text-gray-950 hover:text-gray-800 mx-5 select-none cursor-pointer" />
-        </h2>
-        {Data.map((item, index) => (
-          <div
-            key={index}
-            className="bg-white p-2 m-2 rounded-lg flex flex-row justify-between items-center hover:bg-gray-200 select-none cursor-pointer"
-          >
-            <div className="flex flex-row justify-start items-center">
-              {/* <BsPersonCircle className="text-2xl mx-2" /> */}
-              {Data.length != 0 && (
-                <Image
-                  src={item?.img}
-                  alt={item?.nombre}
-                  width={30}
-                  height={30}
-                  className="rounded-full mx-2"
-                />
-              )}
-              <p className="font-semibold">{item?.nombre}</p>
+    <div className="bg-slate-100 w-full flex flex-col justify-start items-center h-screen">
+      <h2 className="lg:text-6xl md:text-6xl sm:text-2xl font-bold text-slate-700 p-4 text-center select-none">
+        Panel de administración de Dynamos
+      </h2>
+      <div className="flex flex-row justify-center items-center lg:mt-10 md:mt-10 sm:mt-5">
+        <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 lg:gap-10 md:gap-10 sm:gap-5">
+          {enlacesPanel.map((enlace, index) => (
+            <Link href={enlace.url} className={estilos} key={index}>
+            <p className="my-2 text-center">{enlace.nombre}</p>
+            <div className="flex flex-row justify-center items-center lg:text-3xl md:text-3xl sm:text-xl my-2">
+              <FaRegEdit />
+              <RiDeleteBin5Line />
+              <MdAddToPhotos />
             </div>
-            <div className="flex flex-row justify-center items-center">
-              <RiDeleteBin5Line className="text-2xl text-blue-900 hover:text-blue-600 mx-2" />
-              <FaRegEdit
-                className="text-2xl text-green-900 hover:text-green-600 mx-2"
-                id={item?._id}
-                onClick={async (e) => {
-                  e.preventDefault();
-                  setId(e.target.id);
-                }}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-      <Center height={"100%"} className="" width={"1px"}>
-        <Divider orientation="vertical" />
-      </Center>
-      <div className="w-8/12 bg-gray-100 flex flex-col justify-start items-center">
-        {User === undefined ? (
-          <Spinner
-            thickness="4px"
-            speed="1.5s"
-            emptyColor="gray.200"
-            color="red.500"
-            size="xl"
-            my="20"
-          />
-        ) : (
-          <div className="w-400px mt-5 flex flex-col justify-center items-center px-10 py-5">
-            {/* <BsPersonCircle className="text-9xl mx-2" /> */}
-            <Image
-              src={User?.img}
-              alt={"User"}
-              width={200}
-              height={200}
-              className="rounded-full"
-            />
-            <Input type="file" className="text-black mt-5" />
-            <Input
-              type="text"
-              defaultValue={User?.nombre}
-              className="text-black mt-5"
-              _placeholder={{
-                color: "black",
-              }}
-            />
-            <Input
-              type="text"
-              defaultValue={User?.cargo}
-              className="text-black mt-5"
-              _placeholder={{
-                color: "black",
-              }}
-            />
-            <Input
-              type="text"
-              defaultValue="Contraseña"
-              className="text-black mt-5"
-              _placeholder={{
-                color: "black",
-              }}
-            />
-            <Button className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-1 mt-5">
-              Editar
-            </Button>
-          </div>
-        )}
+          </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

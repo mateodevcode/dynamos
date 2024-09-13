@@ -7,15 +7,30 @@ import {
   DrawerOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsList } from "react-icons/bs";
 import { enlacesNavbar } from "@/data/navbar";
 import Enlace from "./Enlace";
 import Logo from "../logo/Logo";
+import EnlaceAdmin from "./EnlaceAdmin";
+import { useSession } from "next-auth/react";
 
 function MenuHamburger() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const [admin, setAdmin] = useState(false);
+  const { data: session, status } = useSession();
+  const email = String(session?.user?.email);
+
+  useEffect(() => {
+    if (email.includes(process.env.NEXT_PUBLIC_ADMIN_EMAIL)) {
+      setAdmin(true);
+    } else {
+      setAdmin(false);
+    }
+  }, [session]);
+
+
 
   return (
     <>
@@ -46,8 +61,7 @@ function MenuHamburger() {
                     />
                   );
                 })}
-                {/* <Enlace nombre="Iniciar Sesión" ruta="/login" />
-                <Enlace nombre="Registrarse" ruta="/register" /> */}
+                {admin && <Enlace nombre={"Panel Admin"} ruta={"/admin"} />}
               </div>
             </div>
           </DrawerBody>

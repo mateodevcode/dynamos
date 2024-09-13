@@ -1,6 +1,5 @@
 import Image from "next/image";
 import EnlacesIconEvento from "./EnlacesIconEvento";
-import ConvertirFecha from "@/config/ConvertirFecha";
 import FechaFinal from "./FechaFinal";
 
 const Evento = ({ imagenes, evento }) => {

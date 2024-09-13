@@ -16,7 +16,7 @@ export async function middleware(req) {
     }
 
     // Verificar si el correo del usuario es el del administrador
-    const adminEmail = process.env.NEXT_AUTH_ADMIN_EMAIL; // Reemplaza con el correo del admin
+    const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL; // Reemplaza con el correo del admin
     if (sessionToken.email !== adminEmail) {
       const notAllowedUrl = new URL('/', req.url); // Redirige al home si no es admin
       return NextResponse.redirect(notAllowedUrl);

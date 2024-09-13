@@ -65,7 +65,7 @@ const UsersTeam = ({ datos }) => {
         },
       });
       const data = await res.json();
-      setData(data.reverse());
+      setData(data);
 
       if (Id === "") {
         return setId(data[0]._id);

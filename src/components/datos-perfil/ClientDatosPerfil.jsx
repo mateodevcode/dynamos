@@ -35,7 +35,6 @@ const ClientDatosPerfil = () => {
               method: "GET",
             });
             const user = await res.json();
-            // console.log("enviado");
             setUser(user);
             setAlerta(user.message);
             e.target.reset();

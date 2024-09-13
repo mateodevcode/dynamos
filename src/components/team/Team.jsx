@@ -3,7 +3,6 @@ import CardTeam from "./CardTeam";
 import { useEffect, useState } from "react";
 import HeaderTeam from "./HeaderTeam";
 import SpinnerLoad from "../loading/SpinnerLoad";
-import Skeleton from "../testimonios/Skeleton";
 
 function Team() {
   const [teamDynamo, setTeamDynamo] = useState([]);

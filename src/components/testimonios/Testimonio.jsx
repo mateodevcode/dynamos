@@ -12,6 +12,7 @@ import {
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import { comma } from "@/data/comma";
+import Image from "next/image";
 
 const Testimonio = ({ id }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -38,8 +39,9 @@ const Testimonio = ({ id }) => {
   return (
     <>
       <Button
-        className="bg-green-600 text-white dark:hover:bg-green-400 hover:bg-green-400"
+        className="text-white dark:hover:bg-red-400 dark:bg-red-600 hover:bg-green-400 bg-green-600 lg:text-[14px] sm:text-[8px] lg:px-4 md:px-4 sm:px-3 lg:py-2 md:py-2 sm:py-1"
         onClick={onOpen}
+        size="xs"
       >
         Ver más
       </Button>
@@ -50,17 +52,17 @@ const Testimonio = ({ id }) => {
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody className="w-full h-full">
-            <div className="p-4 w-full">
+            <div className="w-full">
               <div className="h-full bg-gray-100 dark:bg-gray-900 p-8 rounded">
                 <div className="block w-5 h-5 text-gray-400 mb-4">
                   {comma.icon}
                 </div>
-                <p className="leading-relaxed mb-6 dark:text-white text-black">
+                <p className="text-justify leading-relaxed mb-6 dark:text-white text-black">
                   {testimonio.testimonioCompleto}
                 </p>
                 <div className="flex flex-row justify-between items-center">
                   <div className="inline-flex items-center">
-                    <img
+                    <Image
                       alt="testimonial"
                       src={testimonio.img}
                       className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
@@ -82,8 +84,9 @@ const Testimonio = ({ id }) => {
           </ModalBody>
           <ModalFooter>
             <Button
-              className="bg-gray-950 text-white dark:hover:bg-gray-600 hover:bg-green-400"
+              className="text-white dark:hover:bg-red-400 dark:bg-red-600 hover:bg-green-400 bg-green-600 lg:text-[14px] sm:text-[8px] lg:px-4 md:px-4 sm:px-3 lg:py-2 md:py-2 sm:py-1"
               onClick={onClose}
+                      size="xs"
             >
               Close
             </Button>

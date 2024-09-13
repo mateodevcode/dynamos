@@ -1,9 +1,9 @@
 "use client";
-import { Avatar, AvatarBadge, Stack, Tooltip } from "@chakra-ui/react";
-import { signOut, useSession } from "next-auth/react";
+import { Avatar, AvatarBadge, Tooltip } from "@chakra-ui/react";
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { LuLogOut } from "react-icons/lu";
+import Logout from "./Logout";
 
 const UserNavbar = () => {
   const { data: session, status } = useSession();
@@ -41,7 +41,7 @@ const UserNavbar = () => {
         {session?.user?.name}
       </div>
       {status == "authenticated" && (
-        <Link href={`/datos-perfil/`} className="mx-3">
+        <Link href={`/datos-perfil/`} className="mx-2">
           <Tooltip label="Editar Perfil" fontSize="md">
             <Avatar src={user} size={"sm"}>
               <AvatarBadge boxSize="1.25em" bg="green.500" />
@@ -50,16 +50,7 @@ const UserNavbar = () => {
         </Link>
       )}
       {status == "authenticated" && (
-        <Stack direction="row" spacing={4}>
-          <Tooltip label="Salir" fontSize="md">
-          <div
-            onClick={() => signOut()}
-            className="flex flex-row items-center justify-center cursor-pointer"
-          >
-            <LuLogOut className="text-xl mx-1 text-black dark:text-white hover:text-gray-500 dark:hover:text-gray-500" />
-          </div>
-          </Tooltip>
-        </Stack>
+        <Logout />
       )}
     </div>
   );
