@@ -7,7 +7,7 @@ const EnlaceAdmin = () => {
     <Link href="/admin" className="mx-2">
       <Tooltip label="config" fontSize="md">
         <span>
-          <RiListSettingsLine className="text-xl cursor-pointer" />
+          <RiListSettingsLine className="text-xl cursor-pointer hover:text-gray-500 dark:hover:text-gray-500" />
         </span>
       </Tooltip>
     </Link>

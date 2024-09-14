@@ -9,7 +9,7 @@ const Navbar = () => {
         <h1 className="lg:text-xl md:text-xl sm:text-lg">Panel de Administración</h1>
       </div>
       <div className="mx-5">
-        <UserNavbar />
+        <UserNavbar color="text-white text-gray-100 dark:text-white hover:text-gray-400 dark:hover:text-gray-500" />
       </div>
     </div>
   );

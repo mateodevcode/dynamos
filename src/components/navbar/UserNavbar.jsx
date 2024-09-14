@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Logout from "./Logout";
 
-const UserNavbar = () => {
+const UserNavbar = ({color}) => {
   const { data: session, status } = useSession();
   const [user, setUser] = useState([]);
   const [admin, setAdmin] = useState(false);
@@ -44,8 +44,8 @@ const UserNavbar = () => {
   }, [session]);
 
   return (
-    <div className="flex flex-row justify-end items-center text-black">
-      <div className="my-1 dark:text-white select-none sm:hidden lg:flex md:hidden text-sm">
+    <div className="flex flex-row justify-end items-center">
+      <div className="my-1 select-none sm:hidden lg:flex md:hidden text-sm">
         {session?.user?.name}
       </div>
       {status == "authenticated" && (
@@ -58,7 +58,7 @@ const UserNavbar = () => {
         </Link>
       )}
       {status == "authenticated" && (
-        <Logout />
+        <Logout color={color} />
       )}
     </div>
   );

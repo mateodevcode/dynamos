@@ -14,7 +14,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className="dark">
+      <body className="">
         <AuthProvider>
           <ChakraProvider>{children}</ChakraProvider>
         </AuthProvider>

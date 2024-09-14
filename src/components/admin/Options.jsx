@@ -6,7 +6,6 @@ import { VscSettings } from "react-icons/vsc";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import { Tooltip } from "@chakra-ui/react";
 import Link from "next/link";
-import Logo from "../logo/Logo";
 
 const Options = () => {
   const [Data, setData] = useState([]);
@@ -112,9 +111,7 @@ const Options = () => {
             Configuración
             <IoSettingsSharp className="text-blue-900" />
           </li>
-          <Link href="/"
-            className={estilosItems}
-          >
+          <Link href="/" className={estilosItems}>
             Volver a dynamos
             <IoArrowUndo className="text-blue-900" />
           </Link>

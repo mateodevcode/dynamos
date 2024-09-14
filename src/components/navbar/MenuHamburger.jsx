@@ -34,7 +34,7 @@ function MenuHamburger() {
 
   return (
     <>
-      <BsList onClick={onOpen} className="text-xl md:flex lg:hidden select-none" />
+      <BsList onClick={onOpen} className="text-xl md:flex lg:hidden select-none hover:text-gray-500 dark:hover:text-gray-500" />
       <Drawer
         isOpen={isOpen}
         placement="left"
