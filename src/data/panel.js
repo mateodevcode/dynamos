@@ -12,7 +12,7 @@ export const enlacesPanel = [
         nombre: "Testimonios",
     },
     {
-        url: "/admin/userGoogle",
+        url: "/admin/user",
         nombre: "Usuarios",
     },
 ]

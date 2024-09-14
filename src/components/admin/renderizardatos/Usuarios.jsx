@@ -85,7 +85,7 @@ const Eventos = ({ datos }) => {
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/userGoogle`, {
+      const res = await fetch(`http://localhost:3000/api/user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +119,7 @@ const Eventos = ({ datos }) => {
   };
 
   const getEvento = async () => {
-    const res = await fetch(`/api/userGoogle/${Id}`, {
+    const res = await fetch(`/api/user/${Id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -154,7 +154,7 @@ const Eventos = ({ datos }) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`/api/userGoogle/${Id}`, {
+      const res = await fetch(`/api/user/${Id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -197,7 +197,7 @@ const Eventos = ({ datos }) => {
         isClosable: true,
         position: "top",
       });
-      await fetch(`/api/userGoogle/${String(e.target.id)}`, {
+      await fetch(`/api/user/${String(e.target.id)}`, {
         method: "DELETE",
       });
       setTimeout(() => {
@@ -208,7 +208,7 @@ const Eventos = ({ datos }) => {
 
   useEffect(() => {
     const comprobarCorreo = async () => {
-      const res = await fetch(`/api/userGoogle`, {
+      const res = await fetch(`/api/user`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -229,7 +229,7 @@ const Eventos = ({ datos }) => {
     <>
       <div className="lg:w-5/12 md:w-5/12 sm:w-full">
         <h2 className="lg:text-2xl md:text-2xl sm:text-xl font-bold px-2 py-2 text-black bg-gray-100 flex flex-row justify-between items-center select-none">
-          Usuarios de Google
+          Usuarios
           <Tooltip
             label={`Crear usuario`}
             aria-label="A tooltip"

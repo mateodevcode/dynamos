@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { BsMoonFill, BsSun } from "react-icons/bs";
 
-const ModoDark = () => {
+const ModoDark = ({color}) => {
   const [dark, setDark] = useState("dark");
 
   const toggleDark = () => {
@@ -19,13 +19,13 @@ const ModoDark = () => {
 
   return (
     <div
-      className="flex flex-row justify-center items-center mx-2 select-none"
+      className="flex flex-row justify-center items-center m-2 select-none"
       onClick={toggleDark}
     >
       {dark == "dark" ? (
-        <BsSun className="text-lg cursor-pointer hover:text-gray-500" />
+        <BsSun className={`${color} text-xl cursor-pointer`} />
       ) : (
-        <BsMoonFill className="text-lg cursor-pointer hover:text-gray-500" />
+        <BsMoonFill className={`${color} text-xl cursor-pointer`} />
       )}
     </div>
   );

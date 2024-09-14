@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FcGoogle } from "react-icons/fc";
 import ModoDark from "../mododark/ModoDark";
+import FormLogin from "./FormLogin";
 
 const Login = () => {
   return (
@@ -15,23 +16,18 @@ const Login = () => {
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={100}
-              height={100}
-              className="mb-5"
+              width={50}
+              height={50}
+              className=""
             />
           </Link>
           <h2 className="text-4xl font-bold my-4 font-serif">Iniciar sesión</h2>
+          <FormLogin />
           <div
             className="bg-white dark:bg-gray-900 dark:hover:bg-gray-700 p-3 rounded-full my-2 cursor-pointer"
             onClick={() => signIn("google")}
           >
             <FcGoogle className="text-2xl" />
-          </div>
-          <div
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-400 rounded-3xl font-semibold my-5 text-white cursor-pointer select-none"
-            onClick={() => signIn("google")}
-          >
-            Ingresar
           </div>
           <p className="flex gap-x-2 justify-between select-none text-white dark:text-black">
             ¿No tienes cuenta?{" "}
@@ -44,12 +40,14 @@ const Login = () => {
           </p>
         </div>
         <div className="lg:w-6/12 md:w-6/12 sm:w-full h-[500px] dark:bg-gray-900 bg-white rounded-e-md flex flex-col justify-center items-center lg:mt-0 md:mt-0 sm:pt-10">
-          <div className="bg-white absolute lg:top-28 md:top-28 sm:top-6 ml-80 p-2 rounded-full">
-            <ModoDark />
+          <div className="dark:bg-white absolute lg:top-28 md:top-28 sm:top-6 ml-80 p-[2px] bg-gray-900 rounded-full">
+            <ModoDark
+              color={"text-white dark:text-black bg-gray-900 dark:bg-white"}
+            />
           </div>
           <Image
             src={"https://i.postimg.cc/76brbjwp/im2.jpg"}
-            alt={""}
+            alt={"Imagen de inicio de sesión"}
             width={200}
             height={200}
             className="rounded-full"

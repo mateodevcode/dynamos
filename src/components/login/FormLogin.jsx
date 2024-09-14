@@ -1,27 +1,35 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { signIn } from "next-auth/react";
+import { Input, useToast } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-} from "@chakra-ui/react";
-import { FcGoogle } from "react-icons/fc";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { Button } from "../ui/button";
+import { signIn } from "next-auth/react";
 
-function FormLogin() {
+const FormLogin = () => {
+  const toast = useToast();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+
+  const [verContrasena, setVerContrasena] = useState(false);
+  const [tipoContrasena, setTipoContrasena] = useState("password");
+
   const router = useRouter();
 
-  error && setTimeout(() => setError(""), 3000);
-
-  const handleSubmit = async (e) => {
+  const signInEmail = async (e) => {
     e.preventDefault();
+
+    if (!email || !password) {
+      toast({
+        title: "Campos vacíos.",
+        description: "Todos los campos son obligatorios.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+      return;
+    }
+
     try {
       const res = await signIn("credentials", {
         email,
@@ -30,57 +38,59 @@ function FormLogin() {
       });
 
       if (res.error) {
-        setError("Verifica tus credenciales");
-        return;
+        toast({
+          title: "Error",
+          description: "Correo o contraseña incorrectos",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+          position: "top",
+        });
+      } else {
+        router.replace("/");
       }
-
-      router.replace("/");
-      location.reload();
-    } catch (error) {
-      console.log("Error: ", error);
-    }
+    } catch (error) {}
   };
 
   return (
-    <div className="flex h-screen items-center justify-center dark: dark:bg-gray-950 text-black">
-      <div className="max-w-md md:w-full sm:w-full p-10 rounded-xl bg-blue-400/10 py-20">
-        <div className="w-full flex justify-center items-center sm:pb-10">
-          <Link href="/">
-            <Image
-              src="https://i.postimg.cc/D0c276VK/logo-dynamo.png"
-              alt="Imagen del logo dynamos"
-              className="lg:w-24 md:w-24 sm:w-20"
-              width={400}
-              height={400}
-            />
-          </Link>
+    <form
+      onSubmit={signInEmail}
+      className="flex flex-col justify-center items-start w-9/12"
+    >
+      <Input
+        type="email"
+        placeholder="Email"
+        value={email}
+        required
+        className="p-2 my-2 rounded-md dark:bg-gray-100 text-white dark:text-black"
+        onChange={(e) => setEmail(e.target.value)}
+        width={"270px"}
+      />
+      <div className="flex flex-row justify-center items-center w-full">
+        <Input
+          type={tipoContrasena}
+          placeholder="Contraseña"
+          value={password}
+          className="p-2 my-2 rounded-md dark:bg-gray-100 text-white dark:text-black"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <div
+          className="cursor-pointer mx-2"
+          onClick={() => {
+            setVerContrasena(!verContrasena);
+            setTipoContrasena(verContrasena ? "password" : "text");
+          }}
+        >
+          {verContrasena ? <FiEye /> : <FiEyeOff />}
         </div>
-        <form onSubmit={handleSubmit}>
-          <button 
-          onClick={() => signIn("google")}
-          type="button"
-          className="bg-gray-100 hover:bg-gray-300 text-black w-full p-2 rounded-lg my-2 flex justify-start items-center font-semibold lg:text-base md:text-base sm:text-base">
-            <FcGoogle
-            height={20}
-            className="lg:ml-4 md:ml-4 sm:ml-4 lg:mr-16 md:mr-16 sm:mr-10 text-xl" />Inicia sesión con Google
-          </button>
-        </form>
-        {error && (
-          <Alert status="error">
-            <AlertIcon />
-            <AlertTitle>Upss!!</AlertTitle>
-            <AlertDescription>{error}</AlertDescription>
-          </Alert>
-        )}
-        <p className=" mt-4 flex gap-x-2 justify-between select-none dark:text-white">
-          ¿No tienes cuenta?{" "}
-          <Link href="/register" className="text-sky-500 hover:text-zinc-500 font-semibold">
-            Registrate
-          </Link>
-        </p>
       </div>
-    </div>
+      <div className="w-full flex flex-row justify-center items-center">
+        <Button className="px-4 py-2 bg-blue-600 hover:bg-blue-400 rounded-3xl font-semibold my-2 text-white cursor-pointer select-none">
+          Ingresar
+        </Button>
+      </div>
+    </form>
   );
-}
+};
 
 export default FormLogin;

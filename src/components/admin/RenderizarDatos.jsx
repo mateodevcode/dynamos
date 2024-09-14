@@ -17,7 +17,7 @@ const RenderizarDatos = ({ datos }) => {
       return (
         <Testimonios datos={datos} />
       );
-    case "userGoogle":
+    case "user":
       return (
         <Usuarios datos={datos} />
       );

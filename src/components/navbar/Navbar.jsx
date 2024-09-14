@@ -38,7 +38,7 @@ function Navbar() {
       <div className="lg:w-96 md:w-36 sm:w-56 flex flex-row justify-end items-center select-none lg:px-10 md:px-10 sm:px-3">
         {!session && <Login />}
         <UserNavbar />
-        <ModoDark />
+        <ModoDark color={"dark:text-white text-black"} />
         <MenuHamburger />
         {admin && <EnlaceAdmin />}
       </div>

@@ -13,18 +13,26 @@ const UserNavbar = () => {
   useEffect(() => {
     if (status == "authenticated" && session) {
       const cargarUserTeam = async () => {
-        const res = await fetch(`/api/user/${session?.user?.email}`, {
+        const res = await fetch(`/api/user/`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
         });
         const data = await res.json();
-        setUser(data.image);
+        setUser(data);
+
+        const key = "email";
+        const user = data.find((user) => user[key] === session.user.email);
+        if (user) {
+          setUser(user);
+        }
+
       };
       cargarUserTeam();
     }
   }, [session]);
+  
 
   useEffect(() => {
     const adminEmail = process.env.NEXT_AUTH_ADMIN_EMAIL;
@@ -43,7 +51,7 @@ const UserNavbar = () => {
       {status == "authenticated" && (
         <Link href={`/datos-perfil/`} className="mx-2">
           <Tooltip label="Editar Perfil" fontSize="md">
-            <Avatar src={user} size={"sm"}>
+            <Avatar src={user?.image} size={"sm"}>
               <AvatarBadge boxSize="1.25em" bg="green.500" />
             </Avatar>
           </Tooltip>

@@ -94,7 +94,7 @@ const Options = () => {
           </li>
           <li
             className={estilosItems}
-            id="userGoogle"
+            id="user"
             onClick={(e) => {
               handleClick(e.target.id);
             }}

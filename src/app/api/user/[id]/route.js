@@ -1,59 +1,53 @@
-import User from "@/models/user";
 import { connectMongoDB } from "@/lib/mongodb";
+import User from "@/models/user";
 import { NextResponse } from "next/server";
-import UserGoogle from "@/models/userGoogle";
+
 
 export async function GET(request, { params }) {
+  await connectMongoDB();
   try {
-    connectMongoDB();
-    const UserEncontrado = await UserGoogle.findOne({"email": params.id});
-    if (!UserEncontrado)
+    const user = await User.findById(params.id);
+    if (!user) {
       return NextResponse.json(
-        {
-          message: "Usuario no encontrado",
-        },
-        {
-          status: 404,
-        }
+        { message: "Usuario no encontrado" },
+        { status: 404 }
       );
-    return NextResponse.json(UserEncontrado);
+    }
+    return NextResponse.json(user);
   } catch (error) {
-    return NextResponse.json(error.message, {
-      status: 404,
-    });
+    return NextResponse.json({ message: error.message }, { status: 500 });
   }
 }
 
 export async function PUT(request, { params }) {
+  await connectMongoDB();
   try {
     const data = await request.json();
-    const UsuarioActualizado = await User.findOneAndUpdate({"email":params.id}, data, {
-      new: true,
-    });
-    return NextResponse.json(UsuarioActualizado);
+    const updatedUsuario = await User.findByIdAndUpdate(params.id, data);
+    if (!updatedUsuario) {
+      return NextResponse.json(
+        { message: "Usuario no encontrado" },
+        { status: 404 }
+      );
+    }
+    return NextResponse.json(updatedUsuario);
   } catch (error) {
-    return NextResponse.json(error.message, {
-      status: 400,
-    });
+    return NextResponse.json({ message: error.message }, { status: 400 });
   }
 }
 
 export async function DELETE(request, { params }) {
+  await connectMongoDB();
   try {
-    const UsuarioEliminado = await User.findByIdAndDelete(params.id);
-    if (!ProductoEliminado)
+    const deletedUser = await User.findByIdAndDelete(params.id);
+    if (!deletedUser) {
       return NextResponse.json(
-        {
-          message: "Producto no encontrado",
-        },
-        {
-          status: 404,
-        }
+        { message: "Usuario no encontrado" },
+        { status: 404 }
       );
-    return NextResponse.json(UsuarioEliminado);
+    }
+    return NextResponse.json({ message: "Usuario eliminado con éxito" });
   } catch (error) {
-    return NextResponse.json(error.message, {
-      status: 400,
-    });
+    return NextResponse.json({ message: error.message }, { status: 500 });
   }
 }

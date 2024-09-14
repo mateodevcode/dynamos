@@ -1,117 +1,218 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import {
   Alert,
-  AlertDescription,
   AlertIcon,
   AlertTitle,
+  Input,
+  useToast,
 } from "@chakra-ui/react";
-import { signIn } from "next-auth/react";
-import { FcGoogle } from "react-icons/fc";
-import { logo } from "../../data/navbar";
+import React, { useEffect, useState } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
+import { validateEmail } from "@/config/validatedEmail";
+import { validatePassword } from "@/config/validatedContraseña";
 
-
-function FormRegister() {
+const FormRegister = () => {
+  const toast = useToast();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const router = useRouter();
-  error && setTimeout(() => setError(""), 3000);
+  const [ocupacion, setOcupacion] = useState("");
+  const [role, setRole] = useState("");
+  const [image, setImage] = useState("");
+  const [confirmarContrasena, setConfirmarContrasena] = useState("");
+  const [verContrasena, setVerContrasena] = useState(false);
+  const [tipoContrasena, setTipoContrasena] = useState("password");
+  const [comprobarCorreo, setComprobarCorreo] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const comprobarCorreo = async () => {
+      const res = await fetch(`/api/user`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      const correo = data.find((item) => item.email === email);
+      if (correo) {
+        setComprobarCorreo(true);
+      } else {
+        setComprobarCorreo(false);
+      }
+    };
+    comprobarCorreo();
+  }, [email]);
+
+  const handleCreate = async (e) => {
     e.preventDefault();
 
     if (!name || !email || !password) {
-      setError("Todos los campos son obligatorios.");
+      toast({
+        title: "Campos vacíos.",
+        description: "Por favor, rellene todos los campos.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+      return;
+    }
+
+    if (password !== confirmarContrasena) {
+      toast({
+        title: "Las contraseñas no coinciden.",
+        description: "Por favor, vuelva a escribir las contraseñas.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      toast({
+        title: "Correo inválido.",
+        description: "Por favor, ingrese un correo válido.",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
+      return;
+    }
+
+    if (validatePassword(password) !== "") {
+      toast({
+        title: validatePassword(password),
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top",
+      });
       return;
     }
 
     try {
-      const resUserExits = await fetch("api/userexits", {
+      const res = await fetch(`http://localhost:3000/api/user`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
-      });
-
-      const { user } = await resUserExits.json();
-
-      if (user) {
-        setError("El correo electrónico ya está registrado.");
-        return;
-      }
-
-      const res = await fetch("api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          ocupacion,
+          role,
+          image,
+        }),
       });
 
       if (res.ok) {
-        const form = e.target;
-        form.reset();
-        router.push("/");
+        toast({
+          title: "Usuario creado.",
+          description: "El usuario se ha creado correctamente.",
+          status: "success",
+          duration: 8000,
+          isClosable: true,
+          position: "top",
+        });
+        setTimeout(() => {
+          router.push("/login");
+        }, 700);
       } else {
-        setError("Error al registrar el usuario.");
+        alert("Ocurrió un error al crear un usuario");
       }
-    } catch (error) {
-      setError("Error durante el registro de usuario.");
-    }
+    } catch (error) {}
   };
 
   return (
-    <div className="flex justify-center h-screen items-center md:p-10 rounded-md dark:bg-gray-950 dark:text-white">
-      <div className="max-w-md w-full p-10 bg-blue-600/20 rounded-xl py-20">
-        <div className="w-full flex justify-center items-center mb-10">
-          <Link href="/">
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              className="md:w-24 sm:w-20"
-              width={400}
-              height={400}
-            />
-          </Link>
+    <form
+      className="flex flex-col justify-center items-start w-9/12"
+      onSubmit={handleCreate}
+    >
+      <Input
+        type="text"
+        placeholder="Nombre"
+        value={name}
+        className="p-2 my-2 rounded-md dark:bg-gray-100 text-white dark:text-black"
+        onChange={(e) => setName(e.target.value)}
+        width={"270px"}
+      />
+      <Input
+        type="email"
+        placeholder="Email"
+        value={email}
+        required
+        className="p-2 my-2 rounded-md dark:bg-gray-100 text-white dark:text-black"
+        onChange={(e) => setEmail(e.target.value)}
+        width={"270px"}
+      />
+      {comprobarCorreo && (
+        <Alert status="error">
+          <AlertIcon />
+          <AlertTitle>El correo ya esta registrado</AlertTitle>
+        </Alert>
+      )}
+
+      <div className="flex flex-row justify-center items-center w-full">
+        <Input
+          type={tipoContrasena}
+          placeholder="Contraseña"
+          value={password}
+          className="p-2 my-2 rounded-md dark:bg-gray-100 text-white dark:text-black"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <div
+          className="cursor-pointer mx-2"
+          onClick={() => {
+            setVerContrasena(!verContrasena);
+            setTipoContrasena(verContrasena ? "password" : "text");
+          }}
+        >
+          {verContrasena ? <FiEye /> : <FiEyeOff />}
         </div>
-        <h1 className="lg:text-2xl md:text-2xl sm:text-xl font-bold mb-10 text-center">
-          Crea tu cuenta en <strong>Dynamos</strong>
-        </h1>
-        <form onSubmit={handleSubmit}>
-          <button
-            onClick={() => signIn("google")}
-            type="button"
-            className="bg-gray-100 hover:bg-gray-300 text-black w-full p-2 rounded-lg my-2 flex justify-start items-center font-semibold"
-          >
-            <FcGoogle
-              height={20}
-              className="ml-4 lg:mr-14 md:mr-14 sm:mr-8 text-xl"
-            />
-            Registrate con Google
-          </button>
-        </form>
-        {error && (
-          <Alert status="error">
-            <AlertIcon />
-            <AlertTitle>Ups!!!</AlertTitle>
-            <AlertDescription>{error}</AlertDescription>
-          </Alert>
-        )}
-        <p className="text-black mt-3 p-3 flex gap-x-2 justify-between bg-gray-100 select-none md:text-base sm:text-sm">
-          ¿Ya tienes una cuenta?
-          <Link href="/login" className="text-indigo-600 hover:text-zinc-500 font-semibold">
-            Iniciar sesión
-          </Link>
-        </p>
       </div>
-    </div>
+      <div className="flex flex-row justify-center items-center w-full">
+        <Input
+          type={tipoContrasena}
+          placeholder="Confirmar contraseña"
+          className="p-2 my-2 rounded-md dark:bg-gray-100 text-white dark:text-black"
+          onChange={(e) => setConfirmarContrasena(e.target.value)}
+        />
+        <div
+          className="cursor-pointer mx-2"
+          onClick={() => {
+            setVerContrasena(!verContrasena);
+            setTipoContrasena(verContrasena ? "password" : "text");
+          }}
+        >
+          {verContrasena ? <FiEye /> : <FiEyeOff />}
+        </div>
+      </div>
+      {confirmarContrasena !== "" && confirmarContrasena !== password && (
+        <Alert status="error">
+          <AlertIcon />
+          <AlertTitle>Las contraseñas no coinciden</AlertTitle>
+        </Alert>
+      )}
+      {password !== "" && confirmarContrasena === password && (
+        <Alert status="success">
+          <AlertIcon />
+          <AlertTitle>Las contraseñas coinciden</AlertTitle>
+        </Alert>
+      )}
+      <div className="w-full flex flex-row justify-center items-center">
+        <Button className="px-4 py-2 bg-green-600 hover:bg-green-400 rounded-3xl font-semibold my-2 text-white cursor-pointer select-none">
+          Registrarse
+        </Button>
+      </div>
+    </form>
   );
-}
+};
 
 export default FormRegister;
