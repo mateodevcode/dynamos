@@ -1,9 +1,9 @@
 import Bienvenida from "@/components/bienvenida/Bienvenida";
-import SomosDynamos from "@/components/dynamos/SomosDynamosNew";
 import Eventos from "@/components/eventos/Eventos";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
-import Team from "@/components/team/Team";  
+import Podcasts from "@/components/podcasts/new/Podcasts";
+import Team from "@/components/team/Team";
 import Testimonios from "@/components/testimonios/Testimonios";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Bienvenida />
-      <SomosDynamos />
+      <Podcasts />
       <Eventos />
       <Testimonios />
       <Team />

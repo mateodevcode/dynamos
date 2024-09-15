@@ -1,4 +1,3 @@
-"use client";
 import {
   Drawer,
   DrawerBody,
@@ -7,17 +6,16 @@ import {
   DrawerOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsList } from "react-icons/bs";
 import { enlacesNavbar } from "@/data/navbar";
 import Enlace from "./Enlace";
 import Logo from "../logo/Logo";
-import EnlaceAdmin from "./EnlaceAdmin";
 import { useSession } from "next-auth/react";
 
 function MenuHamburger() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
+  const btnRef = useRef();
   const [admin, setAdmin] = useState(false);
   const { data: session, status } = useSession();
   const email = String(session?.user?.email);

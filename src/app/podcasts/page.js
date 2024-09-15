@@ -1,13 +1,13 @@
 import Footer from "@/components/footer/Footer";
-import BarraDeNavegacion from "@/components/navbar/Navbar";
-import PodcastMain from "@/components/podcasts/PodcastMain";
-import PodcastsSlider from "@/components/podcasts/PodcastsSlider";
+import Navbar from "@/components/navbar/Navbar";
+import Podcasts from "@/components/podcasts/new/Podcasts";
 
 export default function podcasts() {
   return (
     <>
-      <BarraDeNavegacion />
-      <div className="bg-black flex h-full pflex-col items-start justify-center">
+      <Navbar />
+      <div className="">
+        <Podcasts />
         {/* Titulo de seccion podcast */}
         {/* <div>
           <h2 className="pt-[calc(150px)] pb-[calc(50px)] pl-[calc(100px)] text-5xl font-bold text-zinc-100">
@@ -15,7 +15,7 @@ export default function podcasts() {
           </h2>
         </div> */}
 
-        <PodcastMain />
+        {/* <PodcastMain /> */}
       </div>
       <Footer />
     </>

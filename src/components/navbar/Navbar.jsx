@@ -24,7 +24,7 @@ function Navbar() {
   }, [session]);
 
   return (
-    <div className="w-full flex flex-row justify-between items-center lg:justify-between md:justify-between sm:justify-between border-gray-200 dark:border-gray-500 border-b-2 z-10 fixed h-12 text-black dark:text-white bg-white dark:bg-gray-950">
+    <div className="w-full flex flex-row justify-between items-center lg:justify-between md:justify-between sm:justify-between border-gray-200 dark:border-gray-500 border-b-2 z-20 fixed h-12 text-black dark:text-white bg-white dark:bg-gray-950">
       <div className="lg:w-96 md:w-40 sm:w-16 flex flex-row justify-start items-center lg:px-10 md:px-10 sm:px-3">
         <Logo />
       </div>
