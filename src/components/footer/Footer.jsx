@@ -103,7 +103,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
           <div className="col-span-full lg:col-span-1">
             <Link href="/">
-              <div className="w-40 h-40 bg-gray-100 dark:bg-white flex flex-row justify-center items-center rounded-full">
+              <div className="w-40 h-40 bg-gray-100 dark:bg-white flex flex-row justify-center items-center rounded-full select-none">
                 <Image src={logo.src} alt="Logo" width={70} height={70} />
               </div>
             </Link>
