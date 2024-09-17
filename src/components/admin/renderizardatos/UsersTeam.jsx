@@ -1,5 +1,5 @@
 "use client";
-import { Tooltip } from "@chakra-ui/react";
+import { Tooltip, useToast } from "@chakra-ui/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { BsPersonFillAdd } from "react-icons/bs";
@@ -12,6 +12,7 @@ const UsersTeam = ({ datos }) => {
   const [Data, setData] = useState([]);
   const [User, setUser] = useState({});
   const [Id, setId] = useState("");
+  const toast = useToast();
 
   useEffect(() => {
     const cargarDatos = async () => {

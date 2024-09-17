@@ -115,9 +115,15 @@ const Footer = () => {
             </h4>
 
             <div className="mt-3 grid space-y-3 text-gray-400  dark:text-neutral-400">
-              <Link href="/eventos" className="hover:text-gray-600">Eventos</Link>
-              <Link href="/noticias" className="hover:text-gray-600">Noticias</Link>
-              <Link href="/podcasts" className="hover:text-gray-600">Podcasts</Link>
+              <Link href="/eventos" className="hover:text-gray-600">
+                Eventos
+              </Link>
+              <Link href="/noticias" className="hover:text-gray-600">
+                Noticias
+              </Link>
+              <Link href="/podcasts" className="hover:text-gray-600">
+                Podcasts
+              </Link>
             </div>
           </div>
 
@@ -127,15 +133,23 @@ const Footer = () => {
             </h4>
 
             <div className="mt-3 grid space-y-3 text-gray-400  dark:text-neutral-400">
-              <Link href="/dynamos" className="hover:text-gray-600">Nosotros</Link>
-              <Link href="/testimonios" className="hover:text-gray-600">Testimonios</Link>
+              <Link href="/dynamos" className="hover:text-gray-600">
+                Nosotros
+              </Link>
+              <Link href="/testimonios" className="hover:text-gray-600">
+                Testimonios
+              </Link>
               <Link href="/team" className="hover:text-gray-600">
                 Unete + TEAM{" "}
                 <span className="inline-block ms-1 text-xs bg-blue-700 text-white py-1 px-2 rounded-lg">
                   Nuevo
                 </span>
               </Link>
-              {admin && <Link href="/podacasts" className="hover:text-gray-600">Admin</Link>}
+              {admin && (
+                <Link href="/podacasts" className="hover:text-gray-600">
+                  Admin
+                </Link>
+              )}
             </div>
           </div>
 
@@ -176,8 +190,14 @@ const Footer = () => {
         <div className="mt-5 sm:mt-12 grid gap-y-2 sm:gap-y-0 sm:flex sm:flex-col-reverse lg:flex-row sm:justify-between sm:items-center">
           <div className="flex justify-between items-center lg:my-0 sm:my-5">
             <p className="text-sm text-gray-400 dark:text-neutral-400 sm:text-center">
-              © 2023 <strong>One Second Cybersecurity</strong>. Todos los
-              derechos reservados.
+              © 2023 Todos los derechos reservados. Desarrollado por{" "}
+              <Link
+                href="https://one-second-cybersecurity.vercel.app"
+                target="_blank"
+              >
+                <strong>One Second Cybersecurity</strong>
+              </Link>
+              .
             </p>
           </div>
           <div className="flex flex-row justify-center items-center text-sm text-gray-400 dark:text-neutral-400">

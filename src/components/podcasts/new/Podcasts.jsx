@@ -2,7 +2,6 @@ import Image from "next/image";
 import React from "react";
 import { BsPlayCircle } from "react-icons/bs";
 import { FaCircle, FaRegCircle } from "react-icons/fa";
-import { IoIosArrowDropright } from "react-icons/io";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { SlArrowRight } from "react-icons/sl";
 
@@ -144,6 +143,110 @@ const Podcasts = () => {
 
       <div className="lg:w-9/12 sm:w-full">
         <h3 className="mx-4 lg:text-3xl sm:text-2xl font-semibold dark:text-white">Destacados</h3>
+      </div>
+      <div className="lg:w-9/12 sm:w-full lg:h-60 sm:h-32 flex flex-row justify-between items-center">
+        <div className="bg-slate-400/50 -mr-8 z-10 py-3 px-1 cursor-pointer hover:bg-slate-500/50">
+          <SlArrowRight className="rotate-180 text-white lg:text-3xl sm:text-2xl" />
+        </div>
+
+        <div className="lg:w-52 sm:w-24 lg:h-52 sm:h-24 border-2 border-black dark:border-white rounded-xl cursor-pointer flex flex-row justify-center items-center bg-black hover:opacity-100 opacity-50">
+          <div
+            className="text-5xl font-bold text-zinc-100 blur-sm absolute lg:w-48 sm:w-16 lg:h-48 sm:h-16"
+            style={{
+              backgroundImage: `url('https://img.freepik.com/vektoren-kostenlos/detaillierte-podcast-logo-vorlage_23-2148786067.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div
+            className="lg:w-40 sm:w-20 lg:h-40 sm:h-20 blur-none z-10"
+            style={{
+              backgroundImage: `url('https://img.freepik.com/vektoren-kostenlos/detaillierte-podcast-logo-vorlage_23-2148786067.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+        </div>
+        <div className="lg:w-52 sm:w-24 lg:h-52 sm:h-24 border-2 border-black dark:border-white rounded-xl cursor-pointer flex flex-row justify-center items-center bg-black hover:opacity-100 opacity-50">
+          <div
+            className="text-5xl font-bold text-zinc-100 blur-sm absolute lg:w-48 sm:w-16 lg:h-48 sm:h-16"
+            style={{
+              backgroundImage: `url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/podcast-logo%2C-podcast-show-logo-design-template-9e9253e9290d750086c3b5ccb665ab7f_screen.jpg?ts=1706016718')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div
+            className="lg:w-40 sm:w-20 lg:h-40 sm:h-20 blur-none z-10"
+            style={{
+              backgroundImage: `url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/podcast-logo%2C-podcast-show-logo-design-template-9e9253e9290d750086c3b5ccb665ab7f_screen.jpg?ts=1706016718')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+        </div>
+        <div className="lg:w-52 sm:w-24 lg:h-52 sm:h-24 border-2 border-black dark:border-white rounded-xl cursor-pointer flex flex-row justify-center items-center bg-black hover:opacity-100 opacity-50">
+          <div
+            className="text-5xl font-bold text-zinc-100 blur-sm absolute lg:w-48 sm:w-16 lg:h-48 sm:h-16"
+            style={{
+              backgroundImage: `url('https://img.freepik.com/vector-premium/diseno-vectores-podcasts_617585-130.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div
+            className="lg:w-40 sm:w-20 lg:h-40 sm:h-20 blur-none z-10"
+            style={{
+              backgroundImage: `url('https://img.freepik.com/vector-premium/diseno-vectores-podcasts_617585-130.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+        </div>
+        <div className="lg:w-52 sm:w-24 lg:h-52 sm:h-24 border-2 border-black dark:border-white rounded-xl cursor-pointer flex flex-row justify-center items-center bg-black hover:opacity-100 opacity-50">
+          <div
+            className="text-5xl font-bold text-zinc-100 blur-sm absolute lg:w-48 sm:w-16 lg:h-48 sm:h-16"
+            style={{
+              backgroundImage: `url('https://static.vecteezy.com/system/resources/thumbnails/012/018/557/small_2x/podcast-logo-design-vintage-microphone-logo-vector.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div
+            className="w-40 h-40 blur-none z-10"
+            style={{
+              backgroundImage: `url('https://static.vecteezy.com/system/resources/thumbnails/012/018/557/small_2x/podcast-logo-design-vintage-microphone-logo-vector.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+        </div>
+        <div className="lg:w-52 sm:w-24 lg:h-52 sm:h-24 border-2 border-black dark:border-white rounded-xl cursor-pointer flex flex-row justify-center items-center bg-black hover:opacity-100 opacity-50 lg:flex sm:hidden">
+          <div
+            className="text-5xl font-bold text-zinc-100 blur-sm absolute lg:w-48 sm:w-16 lg:h-48 sm:h-16"
+            style={{
+              backgroundImage: `url('https://static.vecteezy.com/system/resources/thumbnails/012/018/557/small_2x/podcast-logo-design-vintage-microphone-logo-vector.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+          <div
+            className="lg:w-40 sm:w-20 lg:h-40 sm:h-20 blur-none z-10"
+            style={{
+              backgroundImage: `url('https://static.vecteezy.com/system/resources/thumbnails/012/018/557/small_2x/podcast-logo-design-vintage-microphone-logo-vector.jpg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          ></div>
+        </div>
+        <div className="bg-slate-400/50 -ml-8 py-3 px-1 cursor-pointer hover:bg-slate-500/50">
+          <SlArrowRight className="text-white text-3xl" />
+        </div>
+      </div>
+
+
+      <div className="lg:w-9/12 sm:w-full mt-10">
+        <h3 className="mx-4 lg:text-3xl sm:text-2xl font-semibold dark:text-white">Categorias</h3>
       </div>
       <div className="lg:w-9/12 sm:w-full lg:h-60 sm:h-32 flex flex-row justify-between items-center">
         <div className="bg-slate-400/50 -mr-8 z-10 py-3 px-1 cursor-pointer hover:bg-slate-500/50">

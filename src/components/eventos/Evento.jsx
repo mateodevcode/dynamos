@@ -38,7 +38,7 @@ const Evento = ({ imagenes, evento }) => {
           width={600}
           height={400}
         />
-        <FechaFinal evento={evento} />
+        <FechaFinal evento={evento.fecha} />
       </div>
     </div>
   );
