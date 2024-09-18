@@ -13,14 +13,22 @@ const Podcasts = () => {
           <div className="w-12 h-12 absolute left-1 z-10 cursor-pointer border-2 border-white rounded-md flex flex-row justify-center items-center">
           <MdArrowBackIosNew className="text-white text-4xl" />
           </div>
-          <div
-            className="h-96 blur-md w-full"
-            style={{
-              backgroundImage: `url('https://i.postimg.cc/GmYFbjGH/img-bienvenida.jpg')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
+          <div className="overflow-hidden">
+            <Image className="w-full h-96 blur-md" 
+            src="https://i.postimg.cc/GmYFbjGH/img-bienvenida.jpg"
+            alt="image"
+            width={800}
+            height={400}
+            />
+            {/* <div
+              className="h-96 blur-md w-full "
+              style={{
+                backgroundImage: `url('https://i.postimg.cc/GmYFbjGH/img-bienvenida.jpg')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            ></div> */}
+          </div>
 
           <div className="text-5xl font-bold text-zinc-100 blur-none absolute bg-black w-72 h-72 -mb-7 -ml-7 opacity-50">
             <div className="w-full flex flex-row items-center justify-center h-full">
