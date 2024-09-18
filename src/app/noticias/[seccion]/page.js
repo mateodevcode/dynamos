@@ -19,10 +19,14 @@ export default function seccionNoticias({ params }) {
 
             <h1 className="text-center mt-12 mb-4 text-6xl font-bold">{categoria.nombre}</h1>
             <div>
-              <Titulares />
+              <Titulares
+              noticias={categoria.noticias}
+              />
             </div>
             <div>
-              <ContenedorNoticias noticias={categoria.noticias} />
+              <ContenedorNoticias
+              seccion={categoria.nombre}
+              noticias={categoria.noticias} />
             </div>
           </div>
         ) : null
