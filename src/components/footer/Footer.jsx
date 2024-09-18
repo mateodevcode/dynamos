@@ -98,7 +98,7 @@ const Footer = () => {
   }, [session]);
 
   return (
-    <footer className="mt-auto bg-white w-full dark:bg-gray-950">
+    <footer className="mt-auto bg-slate-900 w-full dark:bg-zinc-950">
       <div className="mt-auto w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 lg:pt-20 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
           <div className="col-span-full lg:col-span-1">
@@ -110,7 +110,7 @@ const Footer = () => {
           </div>
 
           <div className="col-span-1">
-            <h4 className="font-semibold text-black dark:text-white">
+            <h4 className="font-semibold text-white dark:text-white">
               Novedades
             </h4>
 
@@ -128,7 +128,7 @@ const Footer = () => {
           </div>
 
           <div className="col-span-1">
-            <h4 className="font-semibold text-black dark:text-white">
+            <h4 className="font-semibold text-white dark:text-white">
               Dynamos
             </h4>
 
@@ -154,7 +154,7 @@ const Footer = () => {
           </div>
 
           <div className="col-span-2">
-            <h4 className="font-semibold text-black dark:text-white">
+            <h4 className="font-semibold text-white dark:text-white">
               Suscríbete ahora!
             </h4>
 
