@@ -2,6 +2,7 @@
 
 import { FaWindowClose } from "react-icons/fa";
 import { forwardRef, useImperativeHandle, useRef, useEffect } from 'react';
+import Image from "next/image";
 
 const ProductoModal = forwardRef(({ isOpen, onClose, foto, nombre, precio, descripcion }, ref) => {
   const dialogRef = useRef(null);
@@ -19,7 +20,11 @@ const ProductoModal = forwardRef(({ isOpen, onClose, foto, nombre, precio, descr
 
   return (
     <dialog ref={dialogRef} onClose={onClose} className="rounded-xl w-2/4 h-3/5">
-      <img src={foto} className='w-full h-3/4' />
+      <Image 
+      width={300}
+      height={300}
+      alt={nombre}
+      src={foto} className='w-full h-3/4' />
       <div className='p-8'>
         <h2 className='text-3xl'>{nombre}</h2>
         <p>{descripcion}</p>

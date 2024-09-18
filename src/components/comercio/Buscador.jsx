@@ -2,17 +2,17 @@
 import { useState } from "react";
 
 export default function Buscador({ iconoBusqueda }) {
-  const [entradaBuscador, entradaActualizadaBuscador] = useState("");
+  const [entradaBuscador, setEntradaBuscador] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     controladorBuscador();
   };
 
-  const controladorBuscador = (evsent) => {
-    entradaActualizadaBuscador(event.target.value);
+  const controladorBuscador = (e) => {
+    setEntradaBuscador(e.target.value);
   };
-
+  console.log(entradaBuscador)
   return (
     <form className="relative w-fit mt-[5rem]" onSubmit={handleSubmit}>
       <input

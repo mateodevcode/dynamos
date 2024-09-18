@@ -12,6 +12,7 @@ import BotonComercio from "./BotonComercio";
 import { BsWhatsapp } from "react-icons/bs";
 import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Input } from "@chakra-ui/react";
 
 const CompartirProductosModal = forwardRef(
   ({ isOpen, onClose, foto, nombre, descripcion }, ref) => {
@@ -56,7 +57,9 @@ const CompartirProductosModal = forwardRef(
           <FaXTwitter  size={30} className="text-teal-700 transition-all hover:text-orange-400 hover:scale-125 cursor-pointer active:scale-100"/>
           <FaTiktok  size={30} className="text-teal-700 transition-all hover:text-orange-400 hover:scale-125 cursor-pointer active:scale-100"/>
         </div>
-        <input className="py-[3px] px-4 rounded mr-2 mb-8 border-2 border-teal-700" type="text" value={url} />
+        <Input onChange={(e) => {e.preventDefault()
+          console.log(e.target.value)
+        }} className="py-[3px] px-4 rounded mr-2 mb-8 border-2 border-teal-700" type="text" defaultValue={url} />
         <BotonComercio
           buttonText="Copiar"
           bgColor="bg-orange-400"

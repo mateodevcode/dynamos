@@ -58,7 +58,17 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+			//Animaciones
+			keyframes: {
+        fadeIn: {	
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        }
+      },
+      animation: {
+        fadeIn: 'fadeIn 1s ease-in-out',
+      }
   	}
 	,
 	screens: {

@@ -21,6 +21,7 @@ import { TbShoppingCartShare } from "react-icons/tb";
 import BotonComercio from "@/components/comercio/BotonComercio";
 import ProductoModal from "./ProductoModal";
 import CompartirProductosModal from "./CompartirProductosModal";
+import Image from "next/image";
 
 export default function ProductCard({ nombre, descripcion, precio, foto }) {
   /* Modal producto con mas informacion */
@@ -51,7 +52,9 @@ export default function ProductCard({ nombre, descripcion, precio, foto }) {
   return (
     <div className="w-[170px] h-[170px] rounded-xl relative overflow-hidden cursor-pointer">
       <div className="group">
-        <img
+        <Image
+          width={300}
+          height={300}
           className="rounded-t-xl w-full"
           src={foto}
           alt="product"
