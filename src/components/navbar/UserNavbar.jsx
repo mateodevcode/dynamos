@@ -52,7 +52,7 @@ const UserNavbar = ({color}) => {
         <Link href={`/datos-perfil/`} className="mx-2">
           <Tooltip label="Editar Perfil" fontSize="md">
             <Avatar src={user?.image} size={"sm"}>
-              <AvatarBadge boxSize="1.25em" bg="green.500" />
+              <AvatarBadge boxSize="1.24em" bg="green.500" />
             </Avatar>
           </Tooltip>
         </Link>
