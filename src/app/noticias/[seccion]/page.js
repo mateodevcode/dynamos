@@ -4,10 +4,7 @@ import NavSeccionesNoticias from "@/components/noticias/NavSeccionesNoticias";
 import Titulares from "@/components/noticias/Titulares";
 import { categoriasNoticias } from "@/data/noticias.data";
 
-function seccionNoticias({ params }) {
-  console.log(params);
-  console.log(params.seccion);
-
+const page = ({ params }) => {
   return (
     <div>
       <NavSeccionesNoticias />
@@ -31,6 +28,6 @@ function seccionNoticias({ params }) {
       )}
     </div>
   );
-}
+};
 
-export default seccionNoticias;
+export default page;

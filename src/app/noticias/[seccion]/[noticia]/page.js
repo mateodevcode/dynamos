@@ -1,10 +1,5 @@
-function noticia({ params }) {
-  return (
-    <>
-      {console.log(params)}
-      noticia
-    </>
-  );
-}
+const page = () => {
+  return <div>Noticia</div>;
+};
 
-export default noticia;
+export default page;
