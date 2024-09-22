@@ -3,15 +3,14 @@ import NavSeccionesNoticias from "@/components/noticias/NavSeccionesNoticias";
 import Titulares from "@/components/noticias/Titulares";
 import { categoriasNoticias } from "@/data/noticias.data";
 
+import React from "react";
 
-
-export default function() {
-
-  return(
+const page = () => {
+  return (
     <>
-    <NavSeccionesNoticias />
-    <Titulares />
-    {categoriasNoticias.map((categoria, index) => (
+      <NavSeccionesNoticias />
+      <Titulares />
+      {categoriasNoticias.map((categoria, index) => (
         <div key={index}>
           <div className="mx-24 p-4 mt-12 bg-amber-500 rounded">
             <h1 className="text-left text-6xl font-bold">{categoria.nombre}</h1>
@@ -19,10 +18,12 @@ export default function() {
             <p className="text-slate-700">{categoria.descripcion}</p>
           </div>
           <div>
-            <ContenedorNoticias noticias={categoria.noticias}/>
+            <ContenedorNoticias noticias={categoria.noticias} />
           </div>
         </div>
-    ))}
+      ))}
     </>
-  )
-}
+  );
+};
+
+export default page;
