@@ -1,10 +1,10 @@
-export default function noticia ({params}) {
-
-  return(
+function noticia({ params }) {
+  return (
     <>
-    {console.log(params)
-    }
-    noticia
+      {console.log(params)}
+      noticia
     </>
-  )
+  );
 }
+
+export default noticia;

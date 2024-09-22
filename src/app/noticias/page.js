@@ -3,8 +3,6 @@ import NavSeccionesNoticias from "@/components/noticias/NavSeccionesNoticias";
 import Titulares from "@/components/noticias/Titulares";
 import { categoriasNoticias } from "@/data/noticias.data";
 
-import React from "react";
-
 const page = () => {
   return (
     <>
