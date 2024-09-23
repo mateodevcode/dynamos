@@ -4,8 +4,9 @@ import Link from "next/link"
 export default function NoticiaCard({titulo, fecha, foto, descripcion, seccion}) {
 
   function normalizarTexto(texto) {
-    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g,"",/ /g, "-").replace(/ /g, "-").toLowerCase();
-}
+    if (!texto) return '';
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g, "-").toLowerCase();
+  }
 
   return(
     <Link href={`http://localhost:3000/noticias/${normalizarTexto(seccion)}/${normalizarTexto(titulo)}`}>
