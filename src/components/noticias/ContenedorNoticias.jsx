@@ -1,6 +1,6 @@
 import NoticiaCard from "./NoticiaCard";
 
-export default function ContenedorNoticias({ seccion, noticias }) {
+  const ContenedorNoticias = ({ seccion, noticias }) => {
   const altaPrioridad = "col-span-5 row-span-1";
   const mediaPrioridad = "col-span-3 row-span-1";
   const bajaPrioridad = "col-span-2";
@@ -27,4 +27,6 @@ export default function ContenedorNoticias({ seccion, noticias }) {
       })}
     </div>
   );
-}
+};
+
+export default ContenedorNoticias;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { categoriasNoticias } from "@/data/noticias.data";
 
-export default function NavSeccionesNoticias() {
+const NavSeccionesNoticias = () => {
 
   return (
     <nav className="my-6">
@@ -14,4 +14,6 @@ export default function NavSeccionesNoticias() {
       </ul>
     </nav>
   )
-}
+};
+
+export default NavSeccionesNoticias;

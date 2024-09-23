@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
-export default function Titulares() {
+const Titulares = () => {
   const titulares = [
     { "titulo": "Noticia_01", "id": "12", "pic": "https://picsum.photos/id/227/700/400" },
     { "titulo": "Noticia_02", "id": "42", "pic": "https://picsum.photos/id/247/700/400" },
@@ -67,4 +67,6 @@ export default function Titulares() {
       </div>
     </div>
   );
-}
+};
+
+export default Titulares;
