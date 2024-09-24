@@ -1,16 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
+import GeneradorUrl from "@/config/GeneradorUrl";
 
 const NoticiaCard = ({titulo, fecha, foto, descripcion, seccion}) => {
 
- /*  function normalizarTexto(texto) {
-    if (!texto) return '';
-    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/ /g, "-").toLowerCase();
-  } */
-
   return(
-    <Link href="./"/* {`http://localhost:3000/noticias/${normalizarTexto(seccion)}/${normalizarTexto(titulo)}`} */>
-      {/* {console.log(normalizarTexto(titulo))} */}
+    <Link href={`./${GeneradorUrl(seccion)}/${GeneradorUrl(titulo)}`} >
       <div className="bg-[#ffedac] cursor-pointer" >
         <div className="w-full">
           <Image className="w-full"

@@ -1,6 +1,7 @@
 import NoticiaCard from "./NoticiaCard";
 
-  const ContenedorNoticias = ({ seccion, noticias }) => {
+const ContenedorNoticias = ({ seccion, noticias }) => {
+  /* Ubicacion de las noticias segun su prioridad */
   const altaPrioridad = "col-span-5 row-span-1";
   const mediaPrioridad = "col-span-3 row-span-1";
   const bajaPrioridad = "col-span-2";
@@ -19,9 +20,9 @@ import NoticiaCard from "./NoticiaCard";
 
         return (
           <div key={index} className={className}>
-            <NoticiaCard 
-            seccion={seccion}
-            {...noticia} />
+            <NoticiaCard
+              seccion={seccion}
+              {...noticia} />
           </div>
         );
       })}
