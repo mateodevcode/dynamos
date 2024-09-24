@@ -1,22 +1,21 @@
 "use client";
+import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/navbar/Navbar";
 import ContenedorNoticias from "@/components/noticias/ContenedorNoticias";
 import NavSeccionesNoticias from "@/components/noticias/NavSeccionesNoticias";
 import Titulares from "@/components/noticias/Titulares";
+import TituloSeccion from "@/components/noticias/TituloSeccion";
 import { categoriasNoticias } from "@/data/noticias.data";
 
 const page = ({ params }) => {
   return (
-    <div>
+    <div className="dark:bg-zinc-800">
+      <Navbar />
       <NavSeccionesNoticias />
       {categoriasNoticias.map((categoria, index) =>
         params.seccion == categoria.nombre.toLowerCase() ? (
           <div key={index}>
-            <h1 className="text-center mt-12 mb-4 text-6xl font-bold">
-              {categoria.nombre}
-            </h1>
-            <div>
-              <Titulares noticias={categoria.noticias} />
-            </div>
+            <TituloSeccion nombre={categoria.nombre} descripcion={categoria.descripcion} key={index} />
             <div>
               <ContenedorNoticias
                 seccion={categoria.nombre}
@@ -26,6 +25,7 @@ const page = ({ params }) => {
           </div>
         ) : null
       )}
+      <Footer />
     </div>
   );
 };
